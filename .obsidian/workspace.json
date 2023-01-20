@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "ACIT 2831 Business Systems Analysis/Notes/Notes.md",
+                "file": "ACIT 2620 Principles of Ent Networking/Notes/Notes.md",
                 "mode": "source",
                 "source": false
               }
@@ -31,8 +31,7 @@
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -82,7 +81,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "8f3262cadb4ec7e4",
@@ -161,15 +161,15 @@
   },
   "active": "5dec09d74580355d",
   "lastOpenFiles": [
+    "ACIT 2420 Linux System Administration/w23_notes/wk2/lab.md",
+    "ACIT 2420 Linux System Administration/w23_notes/wk2/lab - Copy.md",
+    "ACIT 2620 Principles of Ent Networking/Notes/Notes.md",
+    "ACIT 2831 Business Systems Analysis/Notes/Notes.md",
     "ACIT 2420 Linux System Administration/w23_notes/wk2/week2.md",
     "ACIT 2420 Linux System Administration/w23_notes/wk2/todo.md",
-    "ACIT 2420 Linux System Administration/w23_notes/wk2/lab - Copy.md",
-    "ACIT 2420 Linux System Administration/w23_notes/wk2/lab.md",
     "ACIT 2420 Linux System Administration/w23_notes/wk1/week1.md",
     "ACIT 2420 Linux System Administration/w23_notes/wk1/todo.md",
     "ACIT 2420 Linux System Administration/w23_notes/wk1/lab.md",
-    "ACIT 2620 Principles of Ent Networking/Notes/Notes.md",
-    "ACIT 2831 Business Systems Analysis/Notes/Notes.md",
     "ACIT 2420 Linux System Administration/w23_notes/README.md"
   ]
 }
