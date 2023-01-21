@@ -20,6 +20,18 @@
             }
           },
           {
+            "id": "d0c0939c3c1c3a41",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "ACIT 2620 Principles of Ent Networking/Notes/V.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
             "id": "fec5b1cf624b8a51",
             "type": "leaf",
             "state": {
@@ -31,7 +43,8 @@
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -81,8 +94,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "8f3262cadb4ec7e4",
@@ -98,7 +110,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "ACIT 2620 Principles of Ent Networking/Notes/Notes.md",
+                "file": "ACIT 2620 Principles of Ent Networking/Notes/V.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,7 +127,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "ACIT 2620 Principles of Ent Networking/Notes/Notes.md",
+                "file": "ACIT 2620 Principles of Ent Networking/Notes/V.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -138,7 +150,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "ACIT 2620 Principles of Ent Networking/Notes/Notes.md"
+                "file": "ACIT 2620 Principles of Ent Networking/Notes/V.md"
               }
             }
           }
@@ -159,11 +171,11 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "5dec09d74580355d",
+  "active": "d0c0939c3c1c3a41",
   "lastOpenFiles": [
+    "ACIT 2620 Principles of Ent Networking/Notes/Notes.md",
     "ACIT 2420 Linux System Administration/w23_notes/wk2/lab.md",
     "ACIT 2420 Linux System Administration/w23_notes/wk2/lab - Copy.md",
-    "ACIT 2620 Principles of Ent Networking/Notes/Notes.md",
     "ACIT 2831 Business Systems Analysis/Notes/Notes.md",
     "ACIT 2420 Linux System Administration/w23_notes/wk2/week2.md",
     "ACIT 2420 Linux System Administration/w23_notes/wk2/todo.md",

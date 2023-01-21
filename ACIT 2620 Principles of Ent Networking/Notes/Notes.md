@@ -152,7 +152,7 @@ PS C:\Users\Markus>
 		- Either Manufacturer hard coded  
 		- Or Reserved Addresses (common ones)  
 			- Broadcast Address : FF:FF:FF:FF:FF:FF  
-			- Spanning Tree Multicast:  01:80:C2:00:00:00  
+			- **Spanning Tree Multicast:  01:80:C2:00:00:00  **
 			- IANA reserves all address starting  with 00:00:5E see Ethernet Numbers (this includes IPv4 multicast - and inserts the low 23 Bits of the multicast  IPv4 Address into the Ethernet Address)  
 			- 33:33:XX is reserved for IPv6 Multicast  
 		- Doesn't contain any data regarding network location – just an ID
@@ -212,3 +212,13 @@ PS C:\Users\Markus>
 	- Buffered: i.e. switched Ethernet  
 	- Polling: i.e. devices asked by host  
 	- Token Passing
+- ## CSMA-CD Ethernet
+	- ![[Pasted image 20230120151902.png]]
+- ## Some Definitions
+	- On an Ethernet network, an individual network segment is known as a **collision domain ** 
+		- Portion of network in which collisions will occur if two nodes transmit data at same time  
+	- Data propagation delay  
+		- Length of time data take to travel from one point on the  segment to another point 
+- ## CSMA CA: Wireless Ethernet
+	- ![[Pasted image 20230120152033.png]]
+- 
