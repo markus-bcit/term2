@@ -12,3 +12,4 @@ class Customer:
 
         self.name = name
         self.ssn = ssn
+        
