@@ -35,7 +35,7 @@ class School:
     def print_student_list(self, full: bool, sort: str) -> print:
         pass
 
-print(School().find_students_by_name('Mary '))
+print(School().find_students_by_name('Mary'))
 
 
 
