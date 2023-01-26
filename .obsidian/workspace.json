@@ -8,18 +8,55 @@
         "type": "tabs",
         "children": [
           {
-            "id": "8e878e87cd1faf1f",
+            "id": "1bd4550d81156e67",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "ACIT 2420 Linux System Administration/w23_notes/wk1/week1.md",
+                "file": "ACIT 2420 Linux System Administration/w23_notes/wk3/week3.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "f464e1c05ab941bf",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "ACIT 2420 Linux System Administration/w23_notes/wk3/lab 2.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "9c1bfae250c12044",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "ACIT 2420 Linux System Administration/w23_notes/wk3/CMDs.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "eeb234e0c5cef980",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "ACIT 2831 Business Systems Analysis/Notes/Notes.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -69,7 +106,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "8f3262cadb4ec7e4",
@@ -85,7 +123,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "ACIT 2420 Linux System Administration/w23_notes/wk1/week1.md",
+                "file": "ACIT 2831 Business Systems Analysis/Notes/Notes.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +140,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "ACIT 2420 Linux System Administration/w23_notes/wk1/week1.md",
+                "file": "ACIT 2831 Business Systems Analysis/Notes/Notes.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +163,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "ACIT 2420 Linux System Administration/w23_notes/wk1/week1.md"
+                "file": "ACIT 2831 Business Systems Analysis/Notes/Notes.md"
               }
             }
           }
@@ -146,17 +184,17 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "8e878e87cd1faf1f",
+  "active": "eeb234e0c5cef980",
   "lastOpenFiles": [
-    "ACIT 2420 Linux System Administration/w23_notes/wk1/lab.md",
-    "ACIT 2420 Linux System Administration/w23_notes/wk1/todo.md",
-    "ACIT 2620 Principles of Ent Networking/Notes/Notes.md",
-    "ACIT 2620 Principles of Ent Networking/Notes/V.md",
-    "ACIT 2420 Linux System Administration/w23_notes/wk2/lab.md",
-    "ACIT 2420 Linux System Administration/w23_notes/wk2/lab - Copy.md",
-    "ACIT 2831 Business Systems Analysis/Notes/Notes.md",
+    "ACIT 2420 Linux System Administration/w23_notes/wk3/lab 2.md",
+    "ACIT 2420 Linux System Administration/w23_notes/wk3/CMDs.md",
+    "ACIT 2420 Linux System Administration/w23_notes/wk3/week3.md",
     "ACIT 2420 Linux System Administration/w23_notes/wk2/week2.md",
+    "ACIT 2420 Linux System Administration/w23_notes/wk3/lab.md",
+    "ACIT 2420 Linux System Administration/w23_notes/wk2/lab - Copy.md",
     "ACIT 2420 Linux System Administration/w23_notes/wk2/todo.md",
-    "ACIT 2420 Linux System Administration/w23_notes/wk1/week1.md"
+    "ACIT 2420 Linux System Administration/w23_notes/wk1/week1.md",
+    "ACIT 2420 Linux System Administration/w23_notes/wk1/lab.md",
+    "ACIT 2420 Linux System Administration/w23_notes/wk1/todo.md"
   ]
 }
