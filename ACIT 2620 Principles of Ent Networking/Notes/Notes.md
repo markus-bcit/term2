@@ -221,4 +221,14 @@ PS C:\Users\Markus>
 		- Length of time data take to travel from one point on the  segment to another point 
 - ## CSMA CA: Wireless Ethernet
 	- ![[Pasted image 20230120152033.png]]
-- 
+# Day 4
+
+
+| MODE | VM to Host | Host to VM | VM to VM | VM to External | External to VM | 
+| --- | --- | --- | --- | --- | --- | 
+| Host Only | Yes | Yes | Yes | No | No | 
+| Internal | No | No | Yes | No | No | 
+| Bridge | Yes | Yes | Yes | Yes | Yes | 
+| NAT | Yes | Port Forward | No | Yes | Port forward | 
+| NAT Network | Yes | Port Forward | Yes | Yes | Port Forward |
+| Not attached | No | No | No | No | No |

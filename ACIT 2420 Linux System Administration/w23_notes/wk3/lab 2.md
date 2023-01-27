@@ -67,7 +67,7 @@ Do this with just a single `find` command.
 
 include a screenshot of the command you used to successfully delete the .pyc files.
 
-![[Pasted image 20230125111652.png]]
+![[Pasted image 20230127134847.png]]
 
 **Part 5: 3 points**
 
@@ -79,7 +79,9 @@ There is more than one way to perform this task. the full 3 points will be award
 Take at least 2 screenshots
 
 - a screenshot of the command you used to create a new index.html file with vi(m)
+- ![[Pasted image 20230127135956.png]]
 - a screenshot of the edited file, to demonstrate that you successfully removed all of the comments
+![[Pasted image 20230127143849.png]]
 
 Describe the method that you used to remove the comments. Do this by adding a note to your pdf.
 Your description needs to demonstrate that you understand how you removed the comments to get full marks.
