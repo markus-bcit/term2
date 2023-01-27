@@ -37,6 +37,11 @@ class Student:
         self.grades = grades
 
     def average(self) -> float:
+        """Returns the average of self.grades
+
+        Returns:
+            float: average of self.grades
+        """
         return sum(self.grades) / len(self.grades)
 
 
@@ -57,6 +62,14 @@ class School:
                 self.students.append(row)
 
     def find_students_by_name(self, name: str) -> list:
+        """_summary_
+
+        Args:
+            name (str): name of the student
+
+        Returns:
+            list: contains the students name id and average 
+        """
         name_id_average = []
         name_id_grade = []
 
@@ -93,6 +106,18 @@ class School:
         return id_average
 
     def print_student_list(self, full: bool=True, sort: str='name') -> print:
+        """prints formatted list of all students, default storted by name 
+
+        Args:
+            full (bool, optional): _description_. Defaults to True.
+            sort (str, optional): 'name', 'id', or 'grade' sorts by alpha, . Defaults to 'name'.
+
+        Raises:
+            TypeError: if sort is not 'name', 'id' or 'grade'
+
+        Returns:
+            print: formated for all student grades
+        """
         name_id = self.students
         name_id_grade = []
         tmp_list = []
@@ -113,6 +138,8 @@ class School:
             name_id_grade = sorted(name_id_grade, key = lambda x: x[1], reverse=True)
         elif sort.upper() == "GRADE":
             name_id_grade = sorted(name_id_grade, key = lambda x: x[2], reverse=True)
+        else:
+            raise AttributeError
 
         for position, each in enumerate(name_id_grade):
             print(f'{name_id_grade[position][0]:<20} | {name_id_grade[position][1]} | {name_id_grade[position][2]} | {" ".join(name_id_grade[position][3])}')
