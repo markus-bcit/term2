@@ -49,10 +49,6 @@
 
 `ROI : (return on investment) value of investments and comparing them %%
 
-
----
----
----
 ---
 # Day 2
 ---
@@ -170,3 +166,19 @@
 		- Make sure the application can be tested, extended, serviced. installed and configured
 - ## Scalability
 	- Accomidate increase/decrease business volume in info systems
+
+# Day 4
+- Review 
+	- ![[Pasted image 20230127084345.png]]
+	- What is a Business process?
+	- What is a 'process model'?
+	- Benefits of Process Model?
+	- Exercise 
+		- Write steps to submit an assignment
+			1. Click Activities > Assignments in your desired course 
+			2. Click the assignment you would like to submit your assignment to
+			3. Click **Add a File**
+			4. Drag and drop the file 
+			5. Click Submit
+		- Write steps to book an appointment with an instructor
+			1. 

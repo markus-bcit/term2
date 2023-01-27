@@ -10,14 +10,28 @@ class Account:
             self.amount = 0
             
     def deposit(self, amount):
-        
+        """adds the amount deposited to the customers account
+
+        Args:
+            amount (int): amount to deposit
+
+        Raises:
+            AttributeError: if amount is < 0.
+        """
         if amount < 0:
             raise AttributeError("Invalid amount")
         else:
             self.amount += amount
     
     def withdraw(self, amount):
-        
+        """subtracts the amount withdrawn from the customers account
+
+        Args:
+            amount (int): amount to withdraw
+
+        Raises:
+            AttributeError: if amount is < 0.
+        """
         if amount < 0:
             raise AttributeError("Invalid amount")
         
