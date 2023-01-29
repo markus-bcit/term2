@@ -81,10 +81,14 @@ Take at least 2 screenshots
 - a screenshot of the command you used to create a new index.html file with vi(m)
 - ![[Pasted image 20230127135956.png]]
 - a screenshot of the edited file, to demonstrate that you successfully removed all of the comments
-![[Pasted image 20230127143849.png]]
-
+ ![[Pasted image 20230127155518.png]]
+![[Pasted image 20230127160158.png]]
+"-c" lets you run vim command, in this case the commands are `g/<!--/d` and 'wq'. The `g/<!--/d` command deletes all lines that start with ``<!--`` which is the syntax for a comment in html. 'wq' writes and quits so the file only opens to run the command then closes almost instantly. The 'index.html' is just the file where the commands should be executed. 
+![[Pasted image 20230127160122.png]]
 Describe the method that you used to remove the comments. Do this by adding a note to your pdf.
+
 Your description needs to demonstrate that you understand how you removed the comments to get full marks.
+
 
 ```html
 <!DOCTYPE html>
