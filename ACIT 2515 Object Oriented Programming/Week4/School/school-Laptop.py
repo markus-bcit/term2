@@ -1,5 +1,7 @@
 
 import csv
+import os
+
 
 class Student:
     def __init__(self, name: str, id: str, grades: list):
@@ -42,8 +44,8 @@ class School:
         Returns:
             list: contains the students name id and average 
         """
-        name_id_average = [] #[[name, id], avg, [name, id], avg...
-        name_id_grade = [] #[[name, id], [1,4,5,6,2], [name, id], [1,4,5,6,2]...
+        name_id_average = [] 
+        name_id_grade = [] #[[name, id], [1,4,5,6,2], [name, id], [1,4,5,6,2]
 
         for col in self.students:
             for name_or_id in col:
@@ -105,8 +107,9 @@ class School:
         Returns:
             print: formatted for all student grades
         """
+        name_id = self.students
         name_id_grade = []
-        tmp_list = [] # temporary list that contains name, id, average, and grade list for each student that is appended to name_id_grade so its a list of lists of student
+        tmp_list = []
         for id_grade in self.grades:
             for name_id in self.students:
                 if name_id[1] in id_grade[0]:
@@ -134,39 +137,32 @@ class School:
 
 
 def main():
-    sort_choice = ''
-    choice_bool = ''
-    choice = 0
-    x = 0
+    input_sort_choice = ''
+    input_choice_bool = ''
+    input_choice = 0
     
-    while (choice not in (1, 2, 3)) or (choice_bool.upper() not in ('Y', 'YES', 'N', 'NO') or (sort_choice not in ('name', 'id','grade'))): #source -> Ian Stewart
-        choice = int(input('[1] Search by student name \n[2] Search by student ID \n[3] List of student averages\nEnter [1-3]:'))
+    while (input_choice not in (1, 2, 3)) or (input_choice_bool.upper() not in ('Y', 'YES', 'N', 'NO') or (input_sort_choice not in ('name', 'id','grade'))): #source -> Ian Stewart
+        input_choice = int(input('[1] Search by student name \n[2] Search by student ID \n[3] List of student averages\nEnter [1-3]:'))
         
-        if choice == 1:
+        if input_choice == 1:
             input_name = str(input('Please enter search: '))
-            while x < len(School().find_students_by_name(input_name)):
-                print(f'{" ".join(School().find_students_by_name(input_name)[x]):<25} | {School().find_students_by_name(input_name)[x + 1]}')
-                x+=2
+            print(School().find_students_by_name(input_name))
             break
-        elif choice == 2:
+        elif input_choice == 2:
             input_id = str(input('Please enter search: '))
-            while x < len(School().find_students_by_id(input_id)):
-                print(f'{" ".join(School().find_students_by_id(input_id)[x]):<25} | {School().find_students_by_id(input_id)[x + 1]}')
-                x+=2
+            print(School().find_students_by_id(input_id))
             break
-        elif choice == 3:
-            choice_bool = str(input('Would you like to show all grades [Y]es or [N]o: '))
+        elif input_choice == 3:
+            input_choice_bool = str(input('Would you like to show all grades [Y]es or [N]o: '))
             
-            while sort_choice not in ('name', 'id', 'grade'):
-                sort_choice = str(input("How would you like to sort by ['name', 'id', 'grade']: "))
+            while input_sort_choice not in ('name', 'id', 'grade'):
+                input_sort_choice = str(input("How would you like to sort by ['name', 'id', 'grade']: "))
                 
-                if choice_bool.upper() in ('Y', 'YES'):
-                    School().print_student_list(True, sort_choice)
+                if input_choice_bool.upper() in ('Y', 'YES'):
+                    School().print_student_list(True, input_sort_choice)
                     
-                elif choice_bool.upper() in ('N', 'NO'):
-                    School().print_student_list(False, sort_choice)
+                elif input_choice_bool.upper() in ('N', 'NO'):
+                    School().print_student_list(False, input_sort_choice)
 
 if __name__ == '__main__':
     main()
-    ## comment bout searching working properly
-    School().find_students_by_name('Name') 
