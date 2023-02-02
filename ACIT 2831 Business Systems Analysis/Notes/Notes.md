@@ -137,7 +137,7 @@
 			- UAT
 			- installing the system (HW, SW, people, ) 
 			- Peformance (non-functional) meets requirements (testing non-functional requirements)
-		8. Maintenance 
+		7. Maintenance 
 			- bug fixes 
 			- new features + new requirements 
 - ## Accessibility 
