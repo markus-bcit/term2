@@ -31,3 +31,4 @@ histogram(nums, main = "Chances of Picking Door",
           col="grey", breaks=seq(620,720,10))
 mean(nums)
 
+rep(c(1:100), each=5, width=20)
