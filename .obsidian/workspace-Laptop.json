@@ -1,31 +1,19 @@
 {
   "main": {
-    "id": "e85ddf9bea5e57e8",
+    "id": "7bbeaca99cbe79a2",
     "type": "split",
     "children": [
       {
-        "id": "c0614af4d4af9ddc",
+        "id": "b98f0da86a93cd9b",
         "type": "tabs",
         "children": [
           {
-            "id": "f464e1c05ab941bf",
+            "id": "d27dd3181b4e083a",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
                 "file": "ACIT 2831 Business Systems Analysis/Notes/Notes.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "9c1bfae250c12044",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "ACIT 2420 Linux System Administration/w23_notes/wk3/CMDs.md",
                 "mode": "source",
                 "source": false
               }
@@ -37,15 +25,15 @@
     "direction": "vertical"
   },
   "left": {
-    "id": "d2feabc3104b77d0",
+    "id": "efd2757f22b8e7cf",
     "type": "split",
     "children": [
       {
-        "id": "b617593332784141",
+        "id": "87eaf27ef768a5b4",
         "type": "tabs",
         "children": [
           {
-            "id": "5dec09d74580355d",
+            "id": "24f2d8fb99314875",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -55,7 +43,7 @@
             }
           },
           {
-            "id": "3b734042da284a67",
+            "id": "f5043f6d78e04eef",
             "type": "leaf",
             "state": {
               "type": "search",
@@ -70,7 +58,7 @@
             }
           },
           {
-            "id": "1e851cee8a0dd04f",
+            "id": "c520ac5cad3586d8",
             "type": "leaf",
             "state": {
               "type": "starred",
@@ -84,15 +72,15 @@
     "width": 300
   },
   "right": {
-    "id": "8f3262cadb4ec7e4",
+    "id": "b6c66f7c99ff9fa0",
     "type": "split",
     "children": [
       {
-        "id": "7018a746feb27849",
+        "id": "5aee5b6871e7a245",
         "type": "tabs",
         "children": [
           {
-            "id": "9a4c5aa1d1b15708",
+            "id": "46ca1d9e2766d7d3",
             "type": "leaf",
             "state": {
               "type": "backlink",
@@ -109,7 +97,7 @@
             }
           },
           {
-            "id": "05bbcc3fd661a5f2",
+            "id": "218b7719cac0f30a",
             "type": "leaf",
             "state": {
               "type": "outgoing-link",
@@ -121,7 +109,7 @@
             }
           },
           {
-            "id": "996575077526a551",
+            "id": "9003685f06fde214",
             "type": "leaf",
             "state": {
               "type": "tag",
@@ -132,7 +120,7 @@
             }
           },
           {
-            "id": "a6416d90c7ee3967",
+            "id": "7bc6d6974f914a57",
             "type": "leaf",
             "state": {
               "type": "outline",
@@ -158,17 +146,6 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "f464e1c05ab941bf",
-  "lastOpenFiles": [
-    "ACIT 2420 Linux System Administration/w23_notes/wk3/week3.md",
-    "ACIT 2420 Linux System Administration/w23_notes/wk4/lab.md",
-    "ACIT 2420 Linux System Administration/w23_notes/wk2/lab.md",
-    "ACIT 2420 Linux System Administration/w23_notes/wk3/CMDs.md",
-    "ACIT 2420 Linux System Administration/w23_notes/wk3/lab 2.md",
-    "ACIT 2420 Linux System Administration/w23_notes/wk2/lab - Copy.md",
-    "ACIT 2420 Linux System Administration/w23_notes/wk2/todo.md",
-    "ACIT 2420 Linux System Administration/w23_notes/wk1/lab.md",
-    "ACIT 2420 Linux System Administration/w23_notes/wk3/lab.md",
-    "ACIT 2420 Linux System Administration/w23_notes/wk1/week1.md"
-  ]
+  "active": "d27dd3181b4e083a",
+  "lastOpenFiles": []
 }

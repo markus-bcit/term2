@@ -137,7 +137,7 @@
 			- UAT
 			- installing the system (HW, SW, people, ) 
 			- Peformance (non-functional) meets requirements (testing non-functional requirements)
-		8. Maintenance 
+		7. Maintenance 
 			- bug fixes 
 			- new features + new requirements 
 - ## Accessibility 
@@ -181,4 +181,74 @@
 			4. Drag and drop the file 
 			5. Click Submit
 		- Write steps to book an appointment with an instructor
-			1. 
+# Day 5
+- SDLC
+- CLasses and Objects
+	- Class 
+		- represents things
+		- The ___ 
+			- the person 
+			- the question 
+			- the  *jumping*  --> X
+		- **Three Things 
+			- methods
+			- attributes / characteristics 
+				- defines what a class is 
+			- NAME
+		- Method/behavior 
+- UML (Unified Modelling Language)
+|**Object : Employee**----------|
+|**Attributes**--------------------|
+|self._____----------------------|
+|-------------------------------|
+|-------------------------------|
+|-----------**Behaviors**---------|
+|--------somthing()-----------|
+|-------------------------------|
+|-------------------------------|
+
+- exercise 
+	- Actors for the LMS 
+		- student 
+			- upload subissions
+			- view material/marks
+			- write discussion posts
+		- instructor 
+			- add course material 
+			- creates tests/quizes 
+			- view/mark submissions
+		- admin
+			- add/remove instructors and students/create accounts
+			- manage users
+		- markers
+			- mark subissions
+			- give feeback
+- ## In the UML
+	- class Students(person)
+		- FN 
+		- LN
+		- DoB
+		- Student ID
+		- Email
+		- Course
+	- Class Instructors(person)
+		- FN/LN
+		- Email
+		- course 
+		- inst ID
+		- Background
+		- misc
+		- DOB
+	- Class Person 
+		- FN/LM
+		- Email
+		- DOB
+		- address 
+		- etc
+- ## Use Cases 
+	- stylized story 
+	- about an actor 
+	- interacting with a system 
+	- under specific circumstances 
+	- to produce an outcome of value, i.e. the reason 'why'
+- actors interact with verbnoun
