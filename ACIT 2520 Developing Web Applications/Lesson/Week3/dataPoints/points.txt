@@ -1,2 +1,2 @@
-10,10,2,3
-The distance between (10, 10), (2, 3) is 10.63014581273465
+
+The distance between (undefined, undefined), (undefined, undefined) is NaN
