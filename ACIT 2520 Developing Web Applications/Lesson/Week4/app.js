@@ -1,46 +1,41 @@
-const fs = require("fs");
+// const fs = require("fs");
 
-// // this was only used to create a dir to test 
-// const createfiles = () => {
-//     fs.mkdir("files", (err) => {
-//         if (err) {
-//             console.log(err);
-//         } else {
-//             console.log("Folders created successfully");
-//         }
-//         fs.writeFile("files/file4.exe", 'hi', (err) => {
-//             if (err) {
-//                 console.log(err);
-//             } else {
-//                 console.log("File created successfully");
-//             }
-//         })
-//     })
-// }
-// // createfiles()
+// // // this was only used to create a dir to test 
+// // const createfiles = () => {
+// //     fs.mkdir("files", (err) => {
+// //         if (err) {
+// //             console.log(err);
+// //         } else {
+// //             console.log("Folders created successfully");
+// //         }
+// //         fs.writeFile("files/file4.exe", 'hi', (err) => {
+// //             if (err) {
+// //                 console.log(err);
+// //             } else {
+// //                 console.log("File created successfully");
+// //             }
+// //         })
+// //     })
+// // }
+// // // createfiles()
 
 
-// // const dir_list = {}
-// const callback = (err, list) => {
-//     if (err) {
-//         console.log(err);
-//     } else {
-//         console.log(list);;
-//     }
-    
-// }
-// const processdir = (argv) => {
-//     console.log(fs.readdir(argv[1], callback(err, dir_list)));
-// }
+const fs = require('fs');
+const path = require('path');
 
-// processdir(process.argv)
+const directory = process.argv[2];
+const extension = process.argv[3];
 
-const files = fs.readdir('files', (err) => {
-            if (err) {
-                console.log(err);
-            } else {
-                console.log("Folders created successfully");
-            }})
+const callback = (err, files) => {
+    if (err) {
+        return console.log(err)
+    }
+    for (file of files) {
+        if (path.extname(file) === `.${extension}`){
+            console.log(file)
+        }
+    }}
 
-// for (const file of files)
-  console.log(files);
+const printfiles = (directory) => {fs.readdir(directory, callback)}
+printfiles(directory)
+module.exports = {printfiles};
