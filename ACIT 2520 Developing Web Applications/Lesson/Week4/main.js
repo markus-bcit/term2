@@ -1,3 +1,5 @@
+const filesearch = require('./app.js')
 
-
-const module = (directory, extension, callback) => {
+filesearch.printfiles(process.argv[2], process.argv[3], (err) => {
+    if (err) {
+        console.error(err)}})

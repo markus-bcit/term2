@@ -51,7 +51,7 @@ console.log('First')
 // Hi => callback queue hold the setTimeout function until everything is executed to start the countdown it is the last to execute 
 //      Note: js only uses a single thread so it sucks at CPU intensive tasks 
 
-// if function has sync => probs asynchronous asdf
+// if function has sync => probs synchronous asdf
 
 
 function func2(num) { return num > 2

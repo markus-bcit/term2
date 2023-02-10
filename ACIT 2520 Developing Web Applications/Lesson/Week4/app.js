@@ -23,10 +23,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const directory = process.argv[2];
-const extension = process.argv[3];
-
-const callback = (err, files) => {
+const printfiles = (directory, extension) => fs.readdir(directory, (err, files) => {
     if (err) {
         return console.log(err)
     }
@@ -34,8 +31,6 @@ const callback = (err, files) => {
         if (path.extname(file) === `.${extension}`){
             console.log(file)
         }
-    }}
+    }})
 
-const printfiles = (directory) => {fs.readdir(directory, callback)}
-printfiles(directory)
 module.exports = {printfiles};
