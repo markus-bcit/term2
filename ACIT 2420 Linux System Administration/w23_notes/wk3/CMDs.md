@@ -15,3 +15,12 @@
 ![[Pasted image 20230201164552.png]]
 ![[Pasted image 20230201164820.png]]
 ![[Pasted image 20230201171209.png]]
+![[Pasted image 20230208083318.png]]
+![[Pasted image 20230208083508.png]]
+![[Pasted image 20230208083641.png]] -> Starts a new instance of bash -> exit to go back to prev. program
+![[Pasted image 20230208084214.png]] 
+![[Pasted image 20230208084303.png]]
+- 0: stdin -> in like typing
+- 1: stdout -> output
+- 2: stderr -> error output
+![[Pasted image 20230208092152.png]]
