@@ -88,8 +88,8 @@
 	- 
 ---
 
---- 
----
+
+
 # Day 3
 ---
 - ### Netflix 
@@ -198,11 +198,11 @@
 		- Method/behavior 
 - UML (Unified Modelling Language)
 |**Object : Employee**----------|
-|**Attributes**--------------------|
+|**Attributes/characteristics**--------------------|
 |self._____----------------------|
 |-------------------------------|
 |-------------------------------|
-|-----------**Behaviors**---------|
+|-----------**Behaviors/Methods**---------|
 |--------somthing()-----------|
 |-------------------------------|
 |-------------------------------|
@@ -252,3 +252,7 @@
 	- under specific circumstances 
 	- to produce an outcome of value, i.e. the reason 'why'
 - actors interact with verbnoun
+
+## Review 
+`Production: any information system an orginization uses in its day-to-day operations`
+`BPM (Business Process Model): understand how a business runs train new people inprove how things work`

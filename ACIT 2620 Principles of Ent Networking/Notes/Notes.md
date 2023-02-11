@@ -232,3 +232,76 @@ PS C:\Users\Markus>
 | NAT | Yes | Port Forward | No | Yes | Port forward | 
 | NAT Network | Yes | Port Forward | Yes | Yes | Port Forward |
 | Not attached | No | No | No | No | No |
+
+# Day 5 
+
+# Day 6 
+192.168.2.128/25 size: 128
+sizes : 32
+128/32 = 4 
+
+## Generic process 
+1. Determine number of networks
+2. determine number of hosts per netwrok 
+3. Add 2 to number of hosts per netwrok and round to the neraest power of 2
+4. perform a quick check that assigned netwrok range can accomodate all the required addresses/
+5. sort the neweroks in order of size (this can be altered but makes process not algorithmic)
+6. Start with the largest network:
+	1. divide network into equal parts size according to the largest subnet. the number of parts will deternime how many bits to use in subnetting
+	2. Example: 1 extra bit to yield 2 subnets, 2 extra bits to yield 4 subnets, 3 extra bits to yield 8 subnets etc 
+		- `Extra bit * 2`
+	3. assign the blocks to the subnets excleduding already assignment blocks
+	4. repeat the process . starting with the bext biggest subnet until all subnets have been assigned 
+198.168.5.0/24 => 256
+
+Requirements: subnet1 -> 35 hosts => 37 => 64
+						subnet2 -> 50 hosts => 52 => 64
+						subnet3 -> 90 hosts => 92 => 128/256
+						
+Sorting: 128, 64, 64
+
+
+``` python 
+Step 1: 192.168.5.0 - 192.168.5.127 / 25 
+		192.168.5.128 - 192.168.5.255 / 25
+Step 2: 192.168.5.128 - 192.168.5.191 / 26
+		192.168.5.192 - 192.168.5.255 / 26
+Sorting:
+	128 Sub1: 192.168.5.0 / 25
+	64  Sub2: 192.168.5.128 / 26
+	64  Sub3: 192.168.5.192 / 26
+```
+
+ex2:
+```js
+172.16.53.0 / 24 -> 256
+Requirements: S1: 50 hosts => 52 -> 64  |
+			  S2: 25 hosts => 27 -> 32  |
+			  S3: 20 hosts => 22 -> 32  |
+			  S4: 10 hosts => 12 -> 16  |
+			  S5: 15 hosts => 17 -> 32  >>>> / 256    
+			  S6: 32 hosts => 34 -> 64  |
+			  S7: 5 hosts  => 7  -> 8   |
+
+Step 1: 172.16.53.0-63    /
+		172.16.53.64-127  / >>  26
+		172.16.53.128-192 / >>
+		172.16.53.192-255 /
+
+Step 2: 172.16.53.128-159  / 27
+		172.16.53.160-191  / 27
+
+Step 3: 172.16.53.192-223  / 27
+		172.16.53.224-255  / 27
+
+Step 4: 172.16.53.224-239  / 23
+		172.16.53.240-247  / 29
+
+S1: 172.16.53.0 / 26
+S2: 172.16.53.64 / 26
+S3: 172.16.53.128 / 26
+S4: 172.16.53.160 / 26
+S5: 172.16.53.192 / 26
+S6: 172.16.53.224 / 26
+S7: 172.16.53.240 / 29
+```

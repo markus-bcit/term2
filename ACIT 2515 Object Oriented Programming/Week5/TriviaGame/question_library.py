@@ -76,7 +76,3 @@ class QuestionLibrary:
                 
             if len(question_list) == number: # returns question list when the length of the list is equal to number
                 return question_list
-
-
-
-
