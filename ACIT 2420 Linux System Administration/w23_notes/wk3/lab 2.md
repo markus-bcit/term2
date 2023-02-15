@@ -41,7 +41,7 @@ Example of what the output will look like.
 ./.bash_historylis
 ./.bashrc
 ```
-
+![[Pasted image 20230214160911.png]]
 Include a screenshot that shows your command, and the output.
 ![[Pasted image 20230125105114.png]]
 
@@ -55,6 +55,7 @@ mkdir dir{1..2}
 for dir in $(find . -mindepth 1 -type d); do
   touch $dir/f{1..4}.pyc $dir/p{1..4}.py
 done
+
 ```
 
 This will create two directories and write 8 files to each directory
