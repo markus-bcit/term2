@@ -91,7 +91,9 @@ PS C:\Users\Markus>
 	- ![[Pasted image 20230113155757.png]]
 - Ring | O
 	- impossible for more than one device to use at a time
-
+---
+^^^QUIZ 1^^^
+---
 # Ethernet and LAN
 
 - ## Subdivided Data Link Layer
@@ -233,7 +235,275 @@ PS C:\Users\Markus>
 | NAT Network | Yes | Port Forward | Yes | Yes | Port Forward |
 | Not attached | No | No | No | No | No |
 
-# Day 5 
+## TCP/IP Suite
+
+- Internet Protocol (IP)  
+- Routing Protocols (Used in routing table generation)  
+- Dynamic Host Configuration Protocol (DHCP)  
+- Transport Control Protocol (TCP)  
+- User Datagram Protocol (UDP)
+- Internet Control Message Protocol (ICMP)  
+- Address Resolution Protocol (ARP)
+
+## Related TCP/IP Suite Protocols
+
+- User Datagram Protocol (UDP)  
+	- Connectionless transport service  
+- Internet Control Message Protocol (ICMP)  
+	- Notifies sender of an error in transmission process and that packets were not delivered  
+- Address Resolution Protocol (ARP)  
+	- Obtains MAC address of host or node  
+	- Creates local database mapping MAC address to host’s IP address
+
+## ARP  
+- ARP table  
+- Database that lists the associated MAC and IP addresses  
+	- Contains two types of entries:  
+		- Dynamic ARP table entries  
+		- Static ARP table entries  
+- ARP utility provides a way of obtaining information from and manipulating a device’s ARP table
+
+## Reverse Address Resolution Protocol (RARP)  
+- Allows the client to send a broadcast message with the MAC address of a device and receive the device’s IP address in reply
+	- ![[Pasted image 20230215193358.png]]
+
+## Packet Internet Groper (PING)  
+- Troubleshooting utility that can verify TCP/IP is installed, bound to the NIC, configured correctly, and communicating with the network  
+- An echo request is a signal sent out to another computer  
+- An echo reply is the other computer’s response signal  
+- Process of sending this signal back and forth is known as pinging
+
+## Data Link Layer  
+- Generally Ethernet  
+- Handles the movement of data between nodes on the same link  E.g. Ethernet 
+- Present on every network device  
+- Data Link Specific Devices  bridge, hub, switch
+
+## Network Layer  
+- Goal: move packets for source to destination  
+- Path Determination  
+- the calculation of the route taken by packets  routing 
+	- Forwarding  
+		- The movement of a packet from one network to the next appropriate network
+
+## The Internet Network layer  
+Host, router network layer functions:
+	![[Pasted image 20230215193706.png]]
+
+## Internet Protocol (IP)  
+- Provides information about how and where data should be delivered  
+- Subprotocol that enables TCP/IP to **internetwork** 
+	- To internetwork is to traverse more than one LAN segment and more than one type of network through a router  
+	- In an internetwork, the individual networks that are joined together are called subnetworks 
+- IP is an unreliable, connectionless protocol, which means it does not guarantee delivery of data  
+- Allows protocol to service a request without requesting verified session and without guaranteeing delivery of data, making it simpler and faster
+- 
+## IP Addressing: introduction  
+IP address: 32-bit identifier for host, router interface  
+- interface: connection between host, router and physical link  
+- router’s typically have multiple interfaces  
+- host may have multiple interfaces  
+- IP addresses associated with interface, not host, router
+	- ![[Pasted image 20230215194057.png]]
+- IP address: 
+	- network part (high order bits)  
+	- host part (low order bits)  
+- What’s a network ?  ( from IP perspective)  
+	- device interfaces with same network part of IP address  
+	- can physically reach each other without intervening router
+	- ![[Pasted image 20230215194239.png]]
+## IP Addressing  
+- How to find the  networks?  
+- Detach each interface from router, host  
+- create “islands of isolated networks
+- ![[Pasted image 20230215194335.png]]
+## IP Addresses
+![[Pasted image 20230215194359.png]]
+
+## IP addressing: CIDR  
+- Class based addressing:  
+	- inefficient use of address space, address space exhaustion  
+	- e.g., class B net allocated enough addresses for 65K hosts, even if only 2K hosts in that network  
+- CIDR: Classless Inter Domain Routing  
+- network portion of address of arbitrary length  
+- address format: a.b.c.d/x, where x is # bits in network portion of address  
+- Also written as address + subnet mask
+	- ![[Pasted image 20230215194501.png]]
+## CIDR Revisited: Subnet Mask  
+- Usually written in dotted decimal notation
+- ![[Pasted image 20230215194521.png]]
+
+## Special IP Addresses
+- ![[Pasted image 20230215194542.png]]
+## Broadcast IP Addresses  
+- Limited Broadcast 
+	- 255.255.255.255  
+	- Transmitted only on local segment  not routed  
+- Network Broadcast Address  
+	- Network Address + All host bits set to one  
+		- Network Address = 192.168.1.x  
+		- Network Broadcast Address = 192.168.1.255  
+- Multicast Address  
+	- Lie within the 224.0.0.0 /4 network  
+	- http://www.iana.org/assignments/multicast-addresses
+
+## How IP addresses are assigned:  
+- Hosts (host portion):  
+- Static  hard-coded by system administrator  
+- DHCP: Dynamic Host Configuration Protocol:  
+	dynamically get address: “plug-and-play”  
+	- host broadcasts “DHCP discover” msg  
+	- DHCP server responds with “DHCP offer” msg  
+	- host requests IP address: “DHCP request” msg  
+	- DHCP server sends address: “DHCP ack” msg
+
+## IPv4 Header
+- ![[Pasted image 20230215194724.png]]
+## IPv6 Header
+- ![[Pasted image 20230215194740.png]]
+## Getting a datagram from source to destination
+- datagram remains unchanged, as it travels source to destination  
+- addr fields of interest here
+- ![[Pasted image 20230215194837.png]]
+- tarting at A, given IP datagram addressed to B:  
+	- look up net. address of B  
+	- find B is on same net. as A  
+	- link layer will send datagram directly to B inside link-layer frame  
+		- B and A are directly connected
+- Starting at A, dest. E:  
+	- look up network address of E  
+	- E on different network  
+	- A, E not directly attached  
+	- routing table: next hop router to E is 223.1.1.4  
+	- link layer sends datagram to router 223.1.1.4 inside link- layer frame  
+- datagram arrives at 223.1.1.4
+- Arriving at 223.1.4, destined for 223.1.2.2  
+	- look up network address of E  
+	- E on same network as router’s interface 223.1.2.9  
+		- router, E directly attached  
+	- link layer sends datagram to 223.1.2.2 inside link-layer frame via interface 223.1.2.9  
+	- datagram arrives at 223.1.2.2!!! (hooray!)
+- ![[Pasted image 20230215194852.png]]
+- 
+## Easing Configuration1: Bootstrap Protocol (BOOTP)
+- Service that simplifies IP address management
+- ![[Pasted image 20230215195251.png]]
+## Bootstrap Protocol (BOOTP)  
+- Thanks to BOOTP, a client does not have to remember its own IP address  
+	- Therefore, network administrators do not have to go to each workstation on a network and manually assign its IP address  
+- This situation is ideal for diskless workstations
+
+## Easing Configuration2: Dynamic Host Configuration Protocol  (DHCP)
+- Automated means of assigning a unique IP address to every device on a network  
+- Reasons for implementing DHCP 
+	- Reduce the time and planning spent on IP address management  
+	- Reduce the potential for errors in assigning IP addresses  
+	- Enable users to move their workstations and printers without having to change their TCP/IP configuration  
+	- Make IP addressing transparent for mobile users
+## DHCP Leasing Process  
+- Agreement between DHCP server and client on how long the client will borrow a DHCP-assigned IP address
+- ![[Pasted image 20230215195514.png]]
+
+## Terminating a DHCP Lease  
+- A DHCP lease may expire based on the period established for it in the server configuration  
+- A DHCP lease may be manually terminated at any time from either the client’s TCP/IP configuration or the server’s DHCP configuration  
+- In some instances, a user must terminate a lease 
+- Release  
+	- The act of terminating a DHCP lease
+## IP address space  
+- IP address: 32-bit identifier for host, router interface  
+- This translates to 4,294,967,296 unique addresses  
+- The internet is network of networks, i.e. a collection of multiple IP networks spread across the globe  
+- Each IP network is a range of IP addresses – a smaller address space  
+- An IP address space is identified by a subnet ID obtained using a subnet mask  
+- The size of the address space is determined by the hosts bits
+- “The internet does not have a hierarchical topology, rather the interpretation of addresses is hierarchical.” (RFC 950)
+
+## IP addressing: ISPs  
+Q: How does an ISP get block of addresses?  
+A: **ICANN**: **I**nternet **C**orporation for **A**ssigned **N**ames and **N**umbers  
+	- allocates addresses  
+	- manages DNS  
+	- assigns domain names, resolves disputes
+
+## IP addresses: how to get one?  
+Network (network portion):  
+- get allocated portion of ISP’s address space:
+```
+ISP's block 11001000 00010111 00010000 00000000 200.23.16.0/20  
+Organization 1 11001000 00010111 00010010 00000000 200.23.18.0/23  
+Organization 2 11001000 00010111 00010100 00000000 200.23.20.0/23  
+	...                   .....              ....       ....  
+Organization 7 11001000 00010111 00011110 00000000 200.23.30.0/23
+```
+
+## Subnetting  
+- The prefix “sub” implies a relation (i.e. a portion of another larger network)  
+- It is the process dividing a larger address range into a contiguous sets of addresses (whose size is a power of 2) to best reflect a network’s logical topology  
+- Example:  
+	- Subnet 10.1.0.0/16,  
+		- 8 more bits are assigned to the network ID, to create 256 subnets with a /24 mask.  
+	- Mask allows for 254 host addresses per subnet  
+	- Subnets range from:  
+		- 10.1.0.0 / 24 to 10.1.255.0 / 24
+- ![[Pasted image 20230215200326.png]]
+
+## Subnetting - Why  
+- Smaller networks are easier to manage  
+- Network topology constraints  
+- Reduced network traffic. LANs rely on ARP broadcasting to communicate. Because of this broadcasting nature of LAN, larger networks mean poor performance.  
+- Increased security  
+- Reduced IP wastage
+
+## Subnet size  
+- Each subnet represents a finite address space, a block or range of IP addresses  
+- The first address in the range is used to identify the entire subnet  
+- The last address in the range is the broadcast address for the subnet  
+- If N is the size of subnet S, then the number of usable addresses in S is N – 2  
+- Eg. Given IP address 10.0.15.20/24 then:  
+		Subnet size: 256  
+		Subnet ID: 10.0.15.0/24  
+		Broadcast ID: 10.0.15.255/24  
+		Usable addresses: 254 (10.0.15.1 – 10.0.15.254)
+		
+## Smallest possible subnet  
+- Since two addresses are reserved for the network ID and broadcast ID, the smallest possible subnet has a size of 4  
+- 2 bits are needed to represent a magnitude of 4  
+- In subnetting, 2 bits are always reserved for the host  
+- /30 is the smallest subnet  
+- In reality, the need for such a network rarely occurs
+
+## Subnet prefix  
+- The subnet prefix is the portion of the IP address that identifies the subnet, in binary  
+- For classful subnets, this maps to a decimal prefix  
+- Example:  
+	- 10.0.1.0/8 prefix: 10  
+	- 192.168.0.1/16 prefix: 192.168  
+	- 10.0.15.20/24 prefix: 10.0.15  
+- For classless subnets, the binary prefix does not always map to a decimal representation  
+- Example: 
+	- 10.48.20.200/12 and 10.63.255.10/12 are both part of the same subnet (in this case, the network ID is 10.48.0.0/12 and the broadcast ID is 10.63.255.255/12)
+- ![[Pasted image 20230215200613.png]]
+
+## Classless subnetting  
+- Traditionally, breaking a larger network into smaller subnets followed a classful strategy, i.e. the split occurred at the byte boundary  
+- Example:  
+	- Large address space: 10.0.0.0/16  
+	- Subnets:  
+		- 10.0.0.0/24  
+		- 10.0.0.1/24  
+		- 10.0.0.2/24  
+		- etc  
+- The problem with this approach is that it wastes addresses. All subnets have the same size, regardless of actual requirements (Fixed Length Subnet Mask or FLSM)  
+- Classless subnetting supports both FLSM and VLSM (Variable Length Subnet Mask) subnetting
+- Instead of splitting the network at byte boundary, you estimate the number of host bits to use in subnetting based on desired number of networks and range requirements for each subnet  
+- Example:  
+	- Large address space: 10.0.1.0/24  
+	- Subnets:  
+		- 10.0.1.0/25       126 hosts  
+		- 10.0.1.128/26      62 hosts  
+		- 10.0.1.192/26      62 hosts  
+		- etc
 
 # Day 6 
 192.168.2.128/25 size: 128
@@ -277,7 +547,8 @@ ex2:
 172.16.53.0 / 24 -> 256
 Requirements: S1: 50 hosts => 52 -> 64  |
 			  S2: 25 hosts => 27 -> 32  |
-			  S3: 20 hosts => 22 -> 32  |
+			  S3: 20 hosts => 22 -> 32
+			    |
 			  S4: 10 hosts => 12 -> 16  |
 			  S5: 15 hosts => 17 -> 32  >>>> / 256    
 			  S6: 32 hosts => 34 -> 64  |

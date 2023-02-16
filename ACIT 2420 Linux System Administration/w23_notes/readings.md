@@ -371,13 +371,13 @@ Gid:    1000    1000    1000    1000
 KERNEL → 
 
 1.  Memory management: Keep track of how much memory is used to store what, and where
-    
+ 
 2.  Process management: Determine which processes can use the central processing unit (CPU), when, and for how long
-    
+ 
 3.  Device drivers: Act as mediator/interpreter between the hardware and processes
-    
+ 
 4.  System calls and security: Receive requests for service from the processes
-    
+ 
 
 MISC → 
 
