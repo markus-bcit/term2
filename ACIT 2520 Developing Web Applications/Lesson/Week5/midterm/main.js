@@ -3,6 +3,10 @@ const fs = require('fs');
 const { EOL } = require('os')
 
 const viewAllSupply = (coffeeType, cb) => {
+    if (!['dark-roast', 'medium-roast', 'blonde'].includes(coffeeType)){
+        cb("Coffee type is not 'dark-roast', 'medium-roast', or 'blonde'")
+    }
+    else{
     fs.readFile('supply.txt', 'utf8', (err, data) => {
         if (err) {
             cb(err);
@@ -16,24 +20,27 @@ const viewAllSupply = (coffeeType, cb) => {
             }
         }
         cb(null, coffeeCount[coffeeType]);
-    })
+    })}
 }
 
 const addSupply = (coffeeType, cb) => {
+    if (!['dark-roast', 'medium-roast', 'blonde'].includes(coffeeType)){
+        cb("Coffee type is not 'dark-roast', 'medium-roast', or 'blonde'")
+    }
+    else{
     fs.appendFile('supply.txt', `${EOL}${coffeeType}`, (err) => {
         if (err) { cb(err) }
         else {
-            viewAllSupply('blonde', (err, content) => {
+            viewAllSupply(coffeeType, (err, content) => {
                 if (err) { console.log(err) }
                 else {
                     console.log(content)
+                    cb(null)
                 }
             })
         }
-    })
+    })}
 }
-// add callback to addSupply 
-
 
 viewAllSupply('blonde', (err, content) => {
     if (err) { console.log(err) }
@@ -41,7 +48,7 @@ viewAllSupply('blonde', (err, content) => {
         console.log(content)
         addSupply('blonde', (err) => {
             if (err) { console.log(err) }
-
+            else {console.log('Program is Completed')}
         })
     }
 })

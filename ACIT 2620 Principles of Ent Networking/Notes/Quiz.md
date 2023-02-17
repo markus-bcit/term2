@@ -107,7 +107,8 @@ Answers:
 	D. A collection of data created and used by a router that correlates the IP addresses of connected workstations with their locations
     
 5.  What is a forwarding table? 
-	A. A data structure used by networking devices to determine where to forward incoming packets B. A collection of data created and used by a bridge / switch that correlates the MAC addresses of connected workstations with their locations 
+	A. A data structure used by networking devices to determine where to forward incoming packets 
+	B. A collection of data created and used by a bridge / switch that correlates the MAC addresses of connected workstations with their locations 
 	C. A collection of data created and used by a bridge / switch that correlates the IP addresses of connected workstations with their locations 
 	D. A data structure used by networking devices to determine which devices are connected to a network
     
@@ -218,7 +219,8 @@ Answers:
 
 1.  On an Ethernet network, what is a collision domain? 
 	A. A network segment where all nodes can transmit data at the same time. 
-	B. A network segment where collisions will occur if two nodes transmit data at the same time. C. A network segment where only one node can transmit data at a time. 
+	B. A network segment where collisions will occur if two nodes transmit data at the same time. 
+	C. A network segment where only one node can transmit data at a time. 
 	D. A network segment where no collisions can occur.
     
 2.  What is data propagation delay? 
@@ -268,7 +270,7 @@ Answers:
 6.  B
 7.  D
 
-1.  What is the ARP table? 
+1.  What is the ARP? 
 	A. A database that lists the associated MAC and IP addresses 
 	B. A protocol for assigning IP addresses to network devices 
 	C. A routing table used by routers to determine the best path for network traffic 

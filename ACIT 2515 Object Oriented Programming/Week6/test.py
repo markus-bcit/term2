@@ -1,7 +1,7 @@
 
 
-# # def func(value, *args, quiz=None, **kwargs):
-# #     return f"{len(args)} - {kwargs["example"]}"
+def func(value, *args, quiz=None, **kwargs):
+    return f"{len(args)} - {kwargs["example"]}"
 
 # my_dict = {"value": "1", "example": 10}
 # print(func(**my_dict))

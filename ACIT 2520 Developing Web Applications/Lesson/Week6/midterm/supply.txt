@@ -4,8 +4,6 @@ medium-roast
 dark-roast
 dark-roast
 blonde
-blonde
-blonde
 medium-roast
 medium-roast
 medium-roast
@@ -16,8 +14,4 @@ medium-roast
 dark-roast
 dark-roast
 dark-roast
-blonde
-blonde
-blonde
-blonde
 blonde
