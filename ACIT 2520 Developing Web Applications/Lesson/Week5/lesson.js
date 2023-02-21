@@ -18,9 +18,6 @@ const main = (csv, cb) => {
             return cb(err);
         }
         const meals = {};
-        /*
-        "lunch": [{name: "bento box - sashimi", }] 
-        */
         for (const meal of data.split(EOL)) {
             const [mealType, name, quantity, price] = meal.split(',')
             const mealObj = {name: name, quantity: quantity, price: price}
