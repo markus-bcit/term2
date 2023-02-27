@@ -253,6 +253,47 @@
 	- to produce an outcome of value, i.e. the reason 'why'
 - actors interact with verbnoun
 
+# Day 6
 ## Review 
 `Production: any information system an orginization uses in its day-to-day operations`
 `BPM (Business Process Model): understand how a business runs train new people inprove how things work`
+
+# Day 8
+## Cloud Services 
+- #### On Prem:
+	- a cloud-like environment that is deployed on-premises, meaning within an organization's own data center, rather than being hosted by a third-party provider.
+- #### Public Cloud 
+	- 3rd-party
+	- cloud computing model in which a third-party provider offers computing resources, such as virtual machines, storage, and networking, over the internet. These resources are shared among multiple users, typically through a pay-per-use or subscription-based pricing model.
+- #### Hybrid Cloud 
+	- computing environment that combines elements of both public and private cloud models. In a hybrid cloud, some computing resources are hosted in a public cloud, while others are hosted in a private cloud or on-premises data center.
+- BUILDING BLOCKS FOR A WEB/SERVER/CLOUD
+- #### SaaS (Software as a Service)
+	- the provider hosts and maintains the software application and infrastructure, while customers access and use the software through a subscription-based pricing model .This allows customers to use the software without having to invest in expensive hardware, install and maintain software locally, or manage updates and security patches.
+		- office 365, adobe, gmail, lms
+- #### PaaS (Platform as a Service)
+	- It is a cloud computing model where a third-party provider offers a complete platform that allows customers to develop, run, and manage applications without having to worry about the underlying infrastructure
+		- azue , aws
+- #### IaaS (Infrastructure as a Service)
+	- cloud computing model where a third-party provider hosts and maintains infrastructure, such as servers, storage, and networking components, that is then made available to customers over the internet
+- #### Configure
+	- involves adjusting settings, options, or parameters to optimize the performance, security, and functionality of a system or application to make sure that the system is secure and optimized
+- #### Customize
+	- feature extension that requires coding
+	- process of modifying or adapting a product or service to meet specific user or customer needs. Customization involves adjusting the settings, interface, features, or functionalities of software, hardware, or websites to suit individual preferences or requirements
+- #### In-House
+	- practice of keeping a particular function, activity, or service within an organization or company rather than outsourcing it to a third party or external provider.
+- #### Differentiation (strategy)
+	- competitive strategy that seeks to distinguish a company's products or services from those of its competitors by offering unique and superior features, quality, performance, design, or customer service. The goal of differentiation is to create a perceived value among customers that exceeds the cost of producing the product or service, leading to increased customer loyalty, premium pricing, and market share.
+## System Aquisition Strategies
+- #### Make
+	- requirements need to make - can't/won't get from a third party
+	- harder/more expensive
+- #### Buy
+	- standard functionallity ex: office 365, salesforce
+	- lower cost
+- #### Rent
+	- Cloud, subscriptions 
+	- can be expensive and harder to customize, but potentially lower TCO
+	- scalablity
+	- **Important** - **no** custody of data

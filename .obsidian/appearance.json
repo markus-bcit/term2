@@ -1,5 +1,27 @@
 {
   "accentColor": "",
-  "baseFontSize": 17,
-  "interfaceFontFamily": "Cascadia Code"
+  "baseFontSize": 16,
+  "interfaceFontFamily": "",
+  "enabledCssSnippets": [
+    "autofading-ui",
+    "better-bullet-points-in-edit-mode",
+    "bigger-link-popup-preview",
+    "bullet-point-relationship-lines",
+    "collapsing-sidebar",
+    "custom-folder-files-tree",
+    "custom-icons-differing-files-and-folders",
+    "custom-icons-for-frontmatter-tags",
+    "custom-icons-for-specific-folders",
+    "enlarge-image-on-hover",
+    "hyphenation-and-justification",
+    "image-cards",
+    "media-grid",
+    "nicer-checkboxes",
+    "outliner-for-the-outline-and-file-explorer",
+    "smaller-scrollbar",
+    "stylish-blockquotes",
+    "subtler-folding-gutter-arrows",
+    "tag-pills"
+  ],
+  "cssTheme": "Things"
 }
