@@ -25,7 +25,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "ACIT 2831 Business Systems Analysis/Notes/Notes.md",
+                "file": "ACIT 2420 Linux System Administration/w23_notes/wk6/as1.md",
                 "mode": "source",
                 "source": false
               }
@@ -98,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "ACIT 2831 Business Systems Analysis/Notes/Notes.md",
+                "file": "ACIT 2420 Linux System Administration/w23_notes/wk6/as1.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "ACIT 2831 Business Systems Analysis/Notes/Notes.md",
+                "file": "ACIT 2420 Linux System Administration/w23_notes/wk6/as1.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -138,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "ACIT 2831 Business Systems Analysis/Notes/Notes.md"
+                "file": "ACIT 2420 Linux System Administration/w23_notes/wk6/as1.md"
               }
             }
           }
@@ -161,32 +161,51 @@
   },
   "active": "607d1e0f32ef59f8",
   "lastOpenFiles": [
-    "COMM 2216 Business Communications 2/Resume - Markus.pdf",
-    "COMM 2216 Business Communications 2/Cover Letter - Markus.pdf",
-    "COMM 2216 Business Communications 2/Copy of Job Ad.pdf",
-    "COMM 2216 Business Communications 2/Resumes/Bhavdeep-Resume-Draft Comments by Markus.pdf",
-    "COMM 2216 Business Communications 2/Resumes/Quintin_Resume Comments by Markus.pdf",
-    "COMM 2216 Business Communications 2/CoverLetters/Amin_Cover_letter_draft Comments by Markus.pdf",
-    "COMM 2216 Business Communications 2/CoverLetters/Saad_Cover_Letter Comments by Markus.pdf",
-    "COMM 2216 Business Communications 2/CoverLetters/RamsCoverLetter Comments by Markus.pdf",
-    "COMM 2216 Business Communications 2/CoverLetters/Quinten_Cover_letter Comments by Markus.pdf",
-    "COMM 2216 Business Communications 2/CoverLetters/Bhavdeep-Cover-letter-draft_Comments by Markus.pdf",
-    "COMM 2216 Business Communications 2/CoverLetters/Bhavdeep-Cover-letter-draft.pdf",
-    "ACIT 2420 Linux System Administration/w23_notes/wk6/as1.md",
-    "ACIT 2420 Linux System Administration/w23_notes/wk6/week6.md",
-    "journals/2023_02_22.md",
-    "ACIT 2420 Linux System Administration/w23_notes/wk6/pages/contents.md",
-    "pages/contents.md",
-    "ACIT 2420 Linux System Administration/w23_notes/wk5/Reading.md",
-    "ACIT 2520 Developing Web Applications/Lesson/Week3/Week 3.md",
-    "ACIT 2620 Principles of Ent Networking/Notes/Quiz.md",
-    "ACIT 2620 Principles of Ent Networking/Notes/Notes.md",
-    "ACIT 2420 Linux System Administration/w23_notes/wk5/Untitled.md",
-    "ACIT 2420 Linux System Administration/w23_notes/Midterm_Guide.md",
-    "ACIT 2420 Linux System Administration/w23_notes/wk4/lab.md",
-    "ACIT 2420 Linux System Administration/w23_notes/wk3/week3.md",
-    "ACIT 2620 Principles of Ent Networking/Notes/V.md",
-    "ACIT 2420 Linux System Administration/w23_notes/blah.md",
-    "ACIT 2420 Linux System Administration/w23_notes/readings.md"
+    "ACIT 2520 Developing Web Applications/Lesson/week8/Week8/unzipped/__MACOSX",
+    "ACIT 2520 Developing Web Applications/Lesson/week8/Week8/unzipped/in2.png",
+    "ACIT 2520 Developing Web Applications/Lesson/week8/Week8/unzipped/in1.png",
+    "ACIT 2520 Developing Web Applications/Lesson/week8/Week8/unzipped/in.png",
+    "ACIT 2520 Developing Web Applications/Lesson/week8/Week8/unzipped",
+    "ACIT 2520 Developing Web Applications/Lesson/week8/Week8/node_modules/wrappy/wrappy.js",
+    "ACIT 2520 Developing Web Applications/Lesson/week8/Week8/node_modules/wrappy/README.md",
+    "ACIT 2520 Developing Web Applications/Lesson/week8/Week8/node_modules/wrappy/package.json",
+    "ACIT 2520 Developing Web Applications/Lesson/week8/Week8/node_modules/wrappy/LICENSE",
+    "ACIT 2520 Developing Web Applications/Lesson/week8/Week8/node_modules/wrappy",
+    "ACIT 2520 Developing Web Applications/Lesson/week8/Week8/node_modules/util-deprecate/README.md",
+    "ACIT 2520 Developing Web Applications/Lesson/week8/Week8/node_modules/util-deprecate/package.json",
+    "ACIT 2520 Developing Web Applications/Lesson/week8/Week8/node_modules/util-deprecate/node.js",
+    "ACIT 2520 Developing Web Applications/Lesson/week8/Week8/node_modules/util-deprecate/LICENSE",
+    "ACIT 2520 Developing Web Applications/Lesson/week8/Week8/node_modules/util-deprecate/History.md",
+    "ACIT 2520 Developing Web Applications/Lesson/week8/Week8/node_modules/util-deprecate/browser.js",
+    "ACIT 2520 Developing Web Applications/Lesson/week8/Week8/node_modules/util-deprecate",
+    "ACIT 2520 Developing Web Applications/Lesson/week8/Week8/node_modules/unzipper/README.md",
+    "ACIT 2520 Developing Web Applications/Lesson/week8/Week8/node_modules/string_decoder/README.md",
+    "ACIT 2520 Developing Web Applications/Lesson/week8/Week8/node_modules/safe-buffer/README.md",
+    "ACIT 2520 Developing Web Applications/Lesson/week8/Week8/node_modules/rimraf/README.md",
+    "ACIT 2520 Developing Web Applications/Lesson/week8/Week8/node_modules/readable-stream/doc/wg-meetings/2015-01-30.md",
+    "ACIT 2520 Developing Web Applications/Lesson/week8/Week8/node_modules/readable-stream/README.md",
+    "ACIT 2520 Developing Web Applications/Lesson/week8/Week8/node_modules/readable-stream/GOVERNANCE.md",
+    "ACIT 2520 Developing Web Applications/Lesson/week8/Week8/node_modules/readable-stream/CONTRIBUTING.md",
+    "ACIT 2520 Developing Web Applications/Lesson/week8/Week8/node_modules/process-nextick-args/readme.md",
+    "ACIT 2520 Developing Web Applications/Lesson/week8/Week8/node_modules/process-nextick-args/license.md",
+    "ACIT 2520 Developing Web Applications/Lesson/week8/Week8/node_modules/pngjs/README.md",
+    "ACIT 2520 Developing Web Applications/Lesson/week8/Week8/node_modules/path-is-absolute/readme.md",
+    "ACIT 2520 Developing Web Applications/Lesson/week8/Week8/node_modules/once/README.md",
+    "ACIT 2520 Developing Web Applications/Lesson/week8/Week8/node_modules/minimist/README.md",
+    "ACIT 2520 Developing Web Applications/Lesson/week8/Week8/node_modules/minimist/CHANGELOG.md",
+    "ACIT 2520 Developing Web Applications/Lesson/week8/Week8/node_modules/minimatch/README.md",
+    "ACIT 2520 Developing Web Applications/Lesson/week8/Week8/node_modules/listenercount/README.md",
+    "ACIT 2520 Developing Web Applications/Lesson/week8/Week8/node_modules/listenercount/LICENSE.md",
+    "ACIT 2520 Developing Web Applications/Lesson/week8/Week8/node_modules/inflight/README.md",
+    "ACIT 2520 Developing Web Applications/Lesson/week8/Week8/node_modules/graceful-fs/README.md",
+    "ACIT 2520 Developing Web Applications/Lesson/week8/Week8/node_modules/glob/README.md",
+    "ACIT 2520 Developing Web Applications/Lesson/week8/Week8/node_modules/fstream/README.md",
+    "ACIT 2520 Developing Web Applications/Lesson/week8/Week8/grayscaled/in2.png",
+    "ACIT 2520 Developing Web Applications/Lesson/week8/Week8/grayscaled/in1.png",
+    "ACIT 2520 Developing Web Applications/Lesson/week8/Week8/grayscaled/in.png",
+    "ACIT 2520 Developing Web Applications/Lesson/week8/unzipped/in2.png",
+    "ACIT 2520 Developing Web Applications/Lesson/week8/unzipped/in1.png",
+    "ACIT 2520 Developing Web Applications/Lesson/week8/unzipped/in.png",
+    "ACIT 2520 Developing Web Applications/Lesson/week8/grayscaled/in2.png"
   ]
 }
