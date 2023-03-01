@@ -1,0 +1,61 @@
+#!/bin/bash
+
+# Define the file name to store the tasks
+TASKS_FILE="tasks.txt"
+
+# Define the date format used to store the due-by date
+DATE_FORMAT="+%Y-%m-%d %H:%M:%S"
+
+# Define the help function
+function show_help() {
+  echo "Usage: $0 [-d <due-by-date>] [-t <tag>] <task>"
+  echo "  -d <due-by-date>  Specify a due date for the task in the format of yyyy-mm-dd hh:mm:ss"
+  echo "  -t <tag>          Specify a tag for the task"
+}
+
+# Parse command line arguments
+while getopts ":d:t:" opt; do
+  case $opt in
+    d)
+      due_by_date="$OPTARG"
+      ;;
+    t)
+      tag="$OPTARG"
+      ;;
+    \?)
+      echo "Invalid option: -$OPTARG" >&2
+      show_help
+      exit 1
+      ;;
+    :)
+      echo "Option -$OPTARG requires an argument." >&2
+      show_help
+      exit 1
+      ;;
+  esac
+done
+shift $((OPTIND-1))
+
+# Get the task description from the remaining command line arguments
+task="$@"
+
+# Check if the task description is empty
+if [[ -z "$task" ]]; then
+  echo "Error: Task description is required." >&2
+  show_help
+  exit 1
+fi
+
+# Create the task line to be appended to the tasks file
+task_line="$task"
+if [[ -n "$due_by_date" ]]; then
+  due_by=$(date -d "$due_by_date" "$DATE_FORMAT")
+  task_line="$task_line\t$due_by"
+fi
+if [[ -n "$tag" ]]; then
+  task_line="$task_line\t[$tag]"
+fi
+
+# Append the task line to the tasks file
+echo -e "$task_line" >> "$TASKS_FILE"
+echo "Task added successfully."

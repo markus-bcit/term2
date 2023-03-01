@@ -1,0 +1,65 @@
+#!/bin/bash
+# add alias `alias rm="<pathto>/remove.sh"`
+
+# Define the log file name
+LOG_FILE="$HOME/.remove_log"
+
+# Create log file if it doesn't already exist
+touch "$LOG_FILE"
+
+# Define the function to show help
+function show_help() {
+  echo "Usage: $0 [-s] <file1> [<file2> ...]"
+  echo "  -s  Delete file(s) silently without writing to the log"
+  echo "  -h  Show this help message"
+}
+# Define the function to write to the log file
+function log() {
+  local message="$1"
+  echo "$(date): $(whoami): $message" >> "$LOG_FILE"
+}
+
+# Define the function to delete a file and write to the log file
+function delete_file() {
+  local file="$1"
+  if [[ ! -f "$file" ]]; then
+    echo "File not found: $file"
+    return 1
+  fi
+  if [[ "$2" != "-s" ]]; then
+    log "Deleted $file"
+  fi
+  rm "$file"
+}
+
+
+# Check if no argument is provided, show help
+if [[ $# -eq 0 ]]; then
+  show_help
+  exit 1
+fi
+
+# Parse command line arguments
+silent=false
+while getopts ":sh" opt; do
+  case $opt in
+    s)
+      silent=true
+      ;;
+    h)
+      show_help
+      exit 0
+      ;;
+    \?)
+      echo "Invalid option: -$OPTARG" >&2
+      show_help
+      exit 1
+      ;;
+  esac
+done
+shift $((OPTIND-1))
+
+# Delete files and write to the log file
+for file in "$@"; do
+  delete_file "$file" "$silent"
+done
