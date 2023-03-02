@@ -1,4 +1,5 @@
 #!/bin/bash
+
 # add alias `alias rm="<pathto>/remove.sh"`
 
 # Define the log file name

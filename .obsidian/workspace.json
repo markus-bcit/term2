@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "ACIT 2420 Linux System Administration/w23_notes/wk6/week6.md",
+                "file": "ACIT 2420 Linux System Administration/w23_notes/wk3/lab 2.md",
                 "mode": "source",
                 "source": false
               }
@@ -25,7 +25,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "ACIT 2420 Linux System Administration/w23_notes/wk6/as1.md",
+                "file": "ACIT 2420 Linux System Administration/w23_notes/wk7/Week7.md",
                 "mode": "source",
                 "source": false
               }
@@ -98,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "ACIT 2420 Linux System Administration/w23_notes/wk6/as1.md",
+                "file": "ACIT 2420 Linux System Administration/w23_notes/wk7/Week7.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "ACIT 2420 Linux System Administration/w23_notes/wk6/as1.md",
+                "file": "ACIT 2420 Linux System Administration/w23_notes/wk7/Week7.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -138,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "ACIT 2420 Linux System Administration/w23_notes/wk6/as1.md"
+                "file": "ACIT 2420 Linux System Administration/w23_notes/wk7/Week7.md"
               }
             }
           }
@@ -161,23 +161,31 @@
   },
   "active": "607d1e0f32ef59f8",
   "lastOpenFiles": [
-    "ACIT 2520 Developing Web Applications/Lesson/week8/Week8/unzipped/__MACOSX",
+    "ACIT 2831 Business Systems Analysis/Submissions/Afonso, Markus - A01333486 Module 6.pdf",
+    "ACIT 2831 Business Systems Analysis/Afonso, Markus - A01333486 Module 6.docx",
+    "ACIT 2831 Business Systems Analysis/Afonso, Markus - A01333486 Module 6.docx~RF67eb2b41.TMP",
+    "ACIT 2420 Linux System Administration/w23_notes/wk3/lab 2.md",
+    "ACIT 2420 Linux System Administration/w23_notes/wk3/lab.md",
+    "ACIT 2420 Linux System Administration/w23_notes/wk6/week6.md",
+    "ACIT 2420 Linux System Administration/w23_notes/wk7/Week7.md",
+    "ACIT 2420 Linux System Administration/w23_notes/wk4/lab.md",
+    "ACIT 2420 Linux System Administration/w23_notes/wk6/as1.md",
+    "COMM 2216 Business Communications 2/Proposal1.docx",
+    "ACIT 2420 Linux System Administration/w23_notes/wk7",
+    "ACIT 2520 Developing Web Applications/Lesson/week8/Week8/node_modules/binary/perf/small.js",
+    "ACIT 2520 Developing Web Applications/Lesson/week8/Week8/node_modules/binary/perf/loop.js",
+    "ACIT 2520 Developing Web Applications/Lesson/week8/Week8/node_modules/binary/perf",
+    "ACIT 2520 Developing Web Applications/Lesson/week8/Week8/node_modules/isarray/README.md",
+    "ACIT 2520 Developing Web Applications/Lesson/week8/Week8/node_modules/isarray/test.js",
+    "ACIT 2520 Developing Web Applications/Lesson/week8/Week8/node_modules/isarray/package.json",
+    "ACIT 2520 Developing Web Applications/Lesson/week8/Week8/node_modules/isarray/Makefile",
+    "ACIT 2520 Developing Web Applications/Lesson/week8/Week8/node_modules/inherits/README.md",
     "ACIT 2520 Developing Web Applications/Lesson/week8/Week8/unzipped/in2.png",
     "ACIT 2520 Developing Web Applications/Lesson/week8/Week8/unzipped/in1.png",
     "ACIT 2520 Developing Web Applications/Lesson/week8/Week8/unzipped/in.png",
-    "ACIT 2520 Developing Web Applications/Lesson/week8/Week8/unzipped",
-    "ACIT 2520 Developing Web Applications/Lesson/week8/Week8/node_modules/wrappy/wrappy.js",
     "ACIT 2520 Developing Web Applications/Lesson/week8/Week8/node_modules/wrappy/README.md",
-    "ACIT 2520 Developing Web Applications/Lesson/week8/Week8/node_modules/wrappy/package.json",
-    "ACIT 2520 Developing Web Applications/Lesson/week8/Week8/node_modules/wrappy/LICENSE",
-    "ACIT 2520 Developing Web Applications/Lesson/week8/Week8/node_modules/wrappy",
     "ACIT 2520 Developing Web Applications/Lesson/week8/Week8/node_modules/util-deprecate/README.md",
-    "ACIT 2520 Developing Web Applications/Lesson/week8/Week8/node_modules/util-deprecate/package.json",
-    "ACIT 2520 Developing Web Applications/Lesson/week8/Week8/node_modules/util-deprecate/node.js",
-    "ACIT 2520 Developing Web Applications/Lesson/week8/Week8/node_modules/util-deprecate/LICENSE",
     "ACIT 2520 Developing Web Applications/Lesson/week8/Week8/node_modules/util-deprecate/History.md",
-    "ACIT 2520 Developing Web Applications/Lesson/week8/Week8/node_modules/util-deprecate/browser.js",
-    "ACIT 2520 Developing Web Applications/Lesson/week8/Week8/node_modules/util-deprecate",
     "ACIT 2520 Developing Web Applications/Lesson/week8/Week8/node_modules/unzipper/README.md",
     "ACIT 2520 Developing Web Applications/Lesson/week8/Week8/node_modules/string_decoder/README.md",
     "ACIT 2520 Developing Web Applications/Lesson/week8/Week8/node_modules/safe-buffer/README.md",
@@ -192,14 +200,6 @@
     "ACIT 2520 Developing Web Applications/Lesson/week8/Week8/node_modules/path-is-absolute/readme.md",
     "ACIT 2520 Developing Web Applications/Lesson/week8/Week8/node_modules/once/README.md",
     "ACIT 2520 Developing Web Applications/Lesson/week8/Week8/node_modules/minimist/README.md",
-    "ACIT 2520 Developing Web Applications/Lesson/week8/Week8/node_modules/minimist/CHANGELOG.md",
-    "ACIT 2520 Developing Web Applications/Lesson/week8/Week8/node_modules/minimatch/README.md",
-    "ACIT 2520 Developing Web Applications/Lesson/week8/Week8/node_modules/listenercount/README.md",
-    "ACIT 2520 Developing Web Applications/Lesson/week8/Week8/node_modules/listenercount/LICENSE.md",
-    "ACIT 2520 Developing Web Applications/Lesson/week8/Week8/node_modules/inflight/README.md",
-    "ACIT 2520 Developing Web Applications/Lesson/week8/Week8/node_modules/graceful-fs/README.md",
-    "ACIT 2520 Developing Web Applications/Lesson/week8/Week8/node_modules/glob/README.md",
-    "ACIT 2520 Developing Web Applications/Lesson/week8/Week8/node_modules/fstream/README.md",
     "ACIT 2520 Developing Web Applications/Lesson/week8/Week8/grayscaled/in2.png",
     "ACIT 2520 Developing Web Applications/Lesson/week8/Week8/grayscaled/in1.png",
     "ACIT 2520 Developing Web Applications/Lesson/week8/Week8/grayscaled/in.png",
