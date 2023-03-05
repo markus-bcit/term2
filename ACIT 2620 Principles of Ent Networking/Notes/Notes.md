@@ -584,3 +584,5 @@ S7: 172.16.53.240 / 29
 -   172.16.4.7
 -   172.25.16.10
 ```
+# IPV6
+- https://www.vultr.com/resources/subnet-calculator-ipv6/?prefix_length=64&display=long&ipv6_address=2001%3Adb8%3Aacad%3Ae%3A%3A%2F64

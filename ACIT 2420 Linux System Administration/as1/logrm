@@ -1,0 +1,108 @@
+#!/bin/bash
+
+#: Title       : logrm
+#: Version     : 1.0
+#: Description : logs files that are deleted
+#: Options
+
+# Users can silent delete with -s
+# Users can show help message with -h
+
+# Define the log file name
+LOG_FILE="$HOME/.remove_log"
+
+# Create log file if it doesn't already exist
+touch "$LOG_FILE"
+###########################################
+# Display help information about how to use the script
+# Arguments:
+#   None
+# Outputs:
+#   Help information printed to the console
+###########################################
+function show_help() {
+	echo "Usage: $0 [-s] <file1> [<file2> ...]"
+	echo "  -s  Delete file(s) silently without writing to the log"
+	echo "  -h  Show this help message"
+	exit 0
+}
+
+############################################
+# Print error message and exit with non-zero status
+# Arguments:
+#       $*: The error
+# Outputs:
+#       Error message printed to the standard error stream
+############################################
+err() {
+        echo "[$(date +'%Y-%m-%dT%H:%M:%S%z')]: $*" >&2
+        echo "Try -h for help"
+	exit 1
+}
+
+######################################
+#Function to log a message
+#Arguments:
+# 	$1: message to log
+# Outputs:
+#	Appends a message with timestamp and username to the log file
+######################################
+function log() {
+ 	local message="$1"
+	echo "$(date): $(whoami): $message" >> "$LOG_FILE"
+}
+
+######################################
+#Function to delete a file/directory and write to the log file
+#Arguments:
+# 	$1: file/directory to delete
+#	$2: optional flag to suppress logging ("-s")
+#Outputs:
+#	Deletes the specified file/directory and appends a message to the log file
+######################################
+function delete_file() {
+  	local file="$1"
+	if [[ ! -e "$file" ]]; then
+		err "File/directory not found: $file"
+	fi
+	if [[ -d "$file" ]]; then
+		rm -r "$file"
+		if "$silent"; then
+			log "Deleted directory $file and its contents"
+		fi
+	else
+		if "$silent"; then
+			log "Deleted file $file"
+		fi
+  		rm "$file"
+  	fi
+}
+
+
+# If no argument is provided, show help
+if [[ $# -eq 0 ]]; then
+	err "Requires at least one file"
+fi
+
+# Parse command line arguments
+silent=true
+while getopts ":hs" opt; do
+	case $opt in
+	s)
+      		silent=false
+      		;;
+    	h)
+      		show_help
+      		;;
+    	\?)
+		show_help
+      		err "Invalid option: -$OPTARG" >&2
+      		;;
+  	esac
+done
+shift $((OPTIND-1))
+
+# Delete files/directories and write to the log file
+for file in "$@"; do
+  	delete_file "$file" "$silent"
+done

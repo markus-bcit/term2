@@ -53,9 +53,18 @@ if [[ -n "$due_by_date" ]]; then
   task_line="$task_line\t$due_by"
 fi
 if [[ -n "$tag" ]]; then
-  task_line="$task_line\t[$tag]"
+	if [[ "$tag" == *" "* ]]; then
+		tmp_options=''
+		for option in $tag; do
+			tmp_options+="[$option] "
+		done
+		task_line="$task_line\t$tmp_options"
+	else
+	task_line="$task_line\t[$tag]"
+	fi	
 fi
 
 # Append the task line to the tasks file
 echo -e "$task_line" >> "$TASKS_FILE"
 echo "Task added successfully."
+

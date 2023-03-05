@@ -64,3 +64,4 @@ shift $((OPTIND-1))
 for file in "$@"; do
   delete_file "$file" "$silent"
 done
+

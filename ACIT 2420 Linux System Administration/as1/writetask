@@ -1,0 +1,154 @@
+#!/bin/bash
+
+#: Title       : writetask
+#: Version     : 1.0
+#: Description : adds task the tast.txt file
+#: Options
+
+# Users can input date with -d
+# Users can input one more more tags using -t
+# Users can show help with -h
+
+# Define the file name to store the tasks
+TASKS_FILE="tasks.txt"
+
+# Define the date format used to store the due-by date
+DATE_FORMAT="+%b-%d-%Y"
+
+############################################
+# Display help information about how to use the script
+# Arguments:
+#	None
+# Outputs:
+#	Help information printed to the console
+############################################
+function show_help() {
+  	echo "Usage: $0 [-d <due-by-date>] [-t <tag>] <task>"
+  	echo "  -d <due-by-date>  Specify a valid date for the task"
+  	echo "  -t <tag>          Specify a tag for the task"
+	echo "  -h	            Show this help message"
+  	exit 0
+}
+############################################
+# Print error message and exit with non-zero status
+# Arguments:
+# 	$*: The error
+# Outputs:
+# 	Error message printed to the standard error stream
+############################################
+err() {
+	echo "[$(date +'%Y-%m-%dT%H:%M:%S%z')]: $*" >&2
+	echo "Try -h for help"
+	exit 1
+} 
+
+############################################
+# Check if the given due-by date is valid and convert it to the desired format
+# Arguments:
+#	None
+# Outputs:
+#	Converted due-by date string in DATE_FORMAT or error message printed to the standard error stream
+############################################
+
+function check_convert_date(){
+        if [[ -z "$due_by_date" ]]; then
+		date_obj=''
+	else
+
+		date_obj=$(date -d "$due_by_date" "$DATE_FORMAT" 2>/dev/null)
+		if [[ -z "$date_obj" ]]; then
+    		err "Invalid date format: $due_by_date" >&2
+  		fi 
+	fi
+}
+
+# Parse command line arguments
+while getopts "hd:t:" opt; do
+	case $opt in
+    	d)
+      		due_by_date="$OPTARG"
+		check_convert_date
+		;;
+    	t)
+		tag="$OPTARG"
+		;;
+	h)
+		show_help
+		;;
+	\?)
+		err "Invalid option: -$OPTARG" >&2
+		;;
+	:)
+		err "Option -$OPTARG requires an argument." >&2
+		;;
+	esac
+done
+shift $((OPTIND-1))
+############################################
+# Prompt the user for the due-by date if it is not provided in the command line arguments
+# Arguments:
+#	None
+# Outputs:
+#	Prompt for the due-by date and converted due-by date string in DATE_FORMAT or error message printed to the standard error stream
+############################################
+function get_date(){
+        echo -n "Enter due-by date (optional, must be a valid date):"
+        read due_by_date
+	check_convert_date
+}
+
+############################################
+# Prompt the user for the tag(s) if it is not provided in the command line arguments
+# Arguments:
+# 	None
+# Outputs:
+#	Prompt for the tag(s)
+############################################
+function get_tag(){
+        echo -n "Enter tag (optional, separate multiple tags with spaces): "
+        read tag
+}
+############################################
+# Convert multiple tags separated by spaces to a string enclosed in square brackets
+# Arguments:
+#	None
+# Outputs:
+# 	String of tags enclosed in square brackets
+############################################
+function many_tags(){
+	tags=($(echo "$tag" | tr ' ' '\n'))
+	tag_line=""
+	for t in "${tags[@]}"; do
+        	tag_line+="[$t] "
+    	done
+}
+
+# Ask date and/or tag if not given 
+if [[ -z "$due_by_date" ]]; then
+	get_date
+fi
+if [[ -z "$tag" ]]; then
+        get_tag
+fi
+
+
+# Create the task line to be appended to the tasks file
+task="$@"
+
+if [[ "$tag" != "" ]]; then
+    many_tags
+fi
+
+if [[ -z "$@" ]]; then
+        echo "Enter task description (press Ctrl+D to finish):"
+        task=$(cat)
+	append_line="Tag(s): $tag_line Date: $date_obj\nTask:\n$task\n---"
+else
+  	task="$@"
+	append_line="Tag(s): $tag_line Date: $date_obj Task: $task\n---"
+fi
+
+# Append the task line to the tasks file
+echo -e "$append_line" >> "$TASKS_FILE"
+echo "Task added successfully."
+

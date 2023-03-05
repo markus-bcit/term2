@@ -1,0 +1,37 @@
+#!/bin/bash
+
+function show_help() {
+  echo "Usage: $0 <file1> [<file2> ...]"
+  echo "  -h  Show this help message"
+}
+
+while getopts ":h" opt; do
+  case $opt in
+    h)
+      show_help
+      exit 0
+      ;;
+    \?)
+      echo "Invalid option: -$OPTARG" >&2
+      show_help
+      exit 1
+      ;;
+  esac
+done
+shift $((OPTIND-1))
+
+if [[ $# -eq 0 ]]; then
+  show_help
+  exit 1
+fi
+
+for file in "$@"; do
+	i=1 
+	while read line; do  
+	if [[ $i == 1 ]]; then
+		echo $'\n'"File Name: $file"
+	fi
+		echo "$i : $line"  
+		i=$((i+1))  
+	done < $file
+done
