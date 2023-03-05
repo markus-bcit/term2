@@ -1,4 +1,5 @@
 #!/bin/bash
+
 # add alias `alias rm="<pathto>/remove.sh"`
 
 # Define the log file name
@@ -63,3 +64,4 @@ shift $((OPTIND-1))
 for file in "$@"; do
   delete_file "$file" "$silent"
 done
+

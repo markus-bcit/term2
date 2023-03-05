@@ -1,0 +1,80 @@
+#!/bin/bash
+
+# Define the file name to store the tasks
+TASKS_FILE="tasks.txt"
+
+# Define the date format used to store the due-by date
+DATE_FORMAT="+%Y-%m-%d %H:%M:%S"
+
+# Define the pager command to display tasks
+PAGER="less"
+
+# Define the help function
+function show_help() {
+  echo "Usage: $0 [-d <due-by-date>] [-t <tag>]"
+  echo "  -d <due-by-date>  Display tasks due by the specified date in the format of yyyy-mm-dd hh:mm:ss"
+  echo "  -t <tag>          Display tasks with the specified tag"
+}
+
+# Parse command line arguments
+while getopts ":d:t:" opt; do
+	case $opt in
+		d)
+			due_by_date="$OPTARG"
+			;;
+		t)
+			tag="$OPTARG"
+			;;
+		\?)
+			echo "Invalid option: -$OPTARG" >&2
+			show_help
+			exit 1
+			;;
+		:)
+			echo "Option -$OPTARG requires an argument." >&2
+			show_help
+			exit 1
+			;;
+	esac
+done
+
+# Check if no argument is provided, display all tasks
+function show_all(){
+	cat "$TASKS_FILE" | $PAGER
+}
+
+# Display tasks with matching tag
+function matching_tag() {
+	grep -E "\[$tag\]" "$TASKS_FILE"
+}
+# Display tasks with matching due-by date
+function matching_date() {	 
+	due_by=$(date -d "$due_by_date" "$DATE_FORMAT")
+	grep -E "$due_by" "$TASKS_FILE"
+}
+function matching_date_tag(){
+	due_by=$(date -d "$due_by_date" "$DATE_FORMAT")
+	grep -E "\[$tag\]" "$TASKS_FILE" | grep -E "$due_by" | $PAGER
+}
+
+
+if [[ -n "$tag" && -n "$due_by_date" ]]; then
+	matching_date_tag
+	exit 0
+elif [[ -n "$tag" ]]; then
+	matching_tag | $PAGER
+	exit 0 
+elif [[ -n "$due_by_date" ]]; then
+	matching_date | $PAGER
+	exit 0
+fi
+
+if [[ $# -eq 0 ]]; then
+	show_all
+	exit 0
+fi
+
+# Show help if invalid options are provided
+echo "Invalid options provided." >&2
+show_help
+exit 1

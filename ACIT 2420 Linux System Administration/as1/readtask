@@ -1,0 +1,156 @@
+#!/bin/bash
+
+#: Title       : readtask
+#: Version     : 1.0
+#: Description : prints task found in the task.txt file
+#: Options
+
+# Users can search date with -d
+# Users can search a tag using -t
+# Users can show help with -h
+
+# Define the file name to store the tasks
+TASKS_FILE="tasks.txt"
+
+# Define the date format used to store the due-by date
+DATE_FORMAT="+%b-%d-%Y"
+
+# Define the pager command to display tasks
+PAGER="less"
+
+
+###########################################
+# Display help information about how to use the script
+# Arguments:
+#   None
+# Outputs:
+#   Help information printed to the console
+###########################################
+function show_help() {
+	echo "Usage: $0 [-d <due-by-date>] [-t <tag>]"
+	echo "  -d <due-by-date>  Display tasks due by the specified date in the format of MMM-dd-yyyy"
+	echo "  -t <tag>          Display tasks with the specified tag"
+	echo "  -h 		    Show this help message"
+	exit 0
+}
+
+###########################################
+# log errors
+# Outputs:
+#   logs date and error 
+###########################################
+err() {
+	echo "[$(date +'%Y-%m-%dT%H:%M:%S%z')]: $*" >&2
+	echo "Try -h for help"
+	exit 1
+}
+
+###########################################
+# Check and convert due by date to the desired format
+# Arguments:
+#   None
+# Outputs:
+#   If due by date is not in the desired format, log an error message and exit
+###########################################  
+function check_convert_date(){
+        date_obj=$(date -d "$due_by_date" "$DATE_FORMAT" 2>/dev/null)
+	if [[ -z "$date_obj" ]]; then
+    		err "Invalid date format: $due_by_date" >&2
+	fi
+}
+
+# Parse command line arguments
+while getopts "hd:t:" opt; do
+	case $opt in
+		d)
+			due_by_date="$OPTARG"
+			check_convert_date
+			;;
+		t)
+			tag="$OPTARG"
+			;;
+		h)
+			show_help
+			;;
+		\?)
+			err "Invalid option: -$OPTARG" >&2
+			;;
+		:)
+			err "Option -$OPTARG requires an argument." >&2
+			;;
+	esac
+done
+
+
+#######################################
+# Display all tasks
+# Arguments:
+#	TASKS_FILE: task file to search
+# Outputs:
+#	tasks stored in the tasks file, displayed through the $PAGER environment variable
+#######################################
+function show_all(){
+	cat "$TASKS_FILE" | $PAGER
+}
+
+#######################################
+# Display tasks with matching tag
+# Arguments:
+#	TASKS_FILE: task file to search
+#	tag: the tag to search for
+# Outputs:
+# 	tasks stored in the tasks file that contain the specified tag, displayed through the $PAGER environment variable
+# awk '/---/ 		-> finds matching '---'
+# {if (flag==1) print "---"; flag=0} -> if the previeus line contains '---' print '---' 
+#					else set the flag to 0 to show the block ended and 
+#					move onto the next task
+# /\[input]/ 		-> if the task contains the tag then
+# {flag=1;} flag'	-> set flag to 1, return the line between '--' and repeat if ...
+#######################################
+function matching_tag() {
+	awk '/---/{if (flag==1) print "---"; flag=0} /\['"$tag"'\]/{flag=1;} flag' "$TASKS_FILE"
+}
+
+#######################################
+# Display tasks with matching due-by date
+# Arguments:
+#   	TASKS_FILE: task file to search
+#	date_obj: formated date to MMM-dd-yyyy
+# Outputs:
+#  	tasks stored in the tasks file that have a due-by date matching the specified date, displayed through the $PAGER environment variable
+#######################################
+function matching_date() {	
+ 	awk '/---/{if (flag==1) print "---"; flag=0} /'"$date_obj"'/{flag=1;} flag' "$TASKS_FILE" 
+}
+
+#######################################
+# Display tasks with matching due-by date and tag
+# Arguments:
+#       TASKS_FILE: task file to search
+#       date_obj: formated date to MMM-dd-yyyy
+#	tag: the tag to search for
+# Outputs:
+#   tasks stored in the tasks file that have a due-by date matching the specified date and contain the specified tag, displayed through the $PAGER environment variable
+#######################################
+function matching_date_tag(){
+	awk '/---/{if (flag==1) print "---"; flag=0} /'"$date_obj"'/ && /'"\[$tag\]"'/{flag=1;} flag' "$TASKS_FILE"
+}
+
+# if tag and date are given
+if [[ -n "$tag" && -n "$due_by_date" ]]; then
+	matching_date_tag | $PAGER
+	exit 0
+elif [[ -n "$tag" ]]; then # only tag
+	matching_tag | $PAGER
+	exit 0 
+elif [[ -n "$due_by_date" ]]; then # only date
+	matching_date | $PAGER
+	exit 0
+else
+	show_all # if none
+	exit 0
+fi
+
+# Show help if invalid options are provided
+show_help
+err "Invalid options provided." >&2

@@ -297,3 +297,38 @@
 	- can be expensive and harder to customize, but potentially lower TCO
 	- scalablity
 	- **Important** - **no** custody of data
+	-
+
+# Day 9
+- #### Review
+	- Problem intitiates SQLC 
+	- requirements are made in the second step 
+	- requirements are somthing a business needs
+		- what we need an information 
+		- functional => does what we need it to do
+		- non-functional => parameters in uses to do what it needs to do
+	- scalability 
+	- business process => recipe we follow to achieve a goal 
+```bash
+while getopts ":d:t:" opt; do
+  case $opt in
+    d)
+      due_by_date="$OPTARG"
+      ;;
+    t)
+      tag="$OPTARG"
+      ;;
+    \?)
+      echo "Invalid option: -$OPTARG" >&2
+      show_help
+      exit 1
+      ;;
+    :)
+      echo "Option -$OPTARG requires an argument." >&2
+      show_help
+      exit 1
+      ;;
+  esac
+done
+shift $((OPTIND-1))
+```

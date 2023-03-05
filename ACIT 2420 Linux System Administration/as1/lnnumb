@@ -1,0 +1,70 @@
+#!/bin/bash
+
+#!/bin/bash
+
+#: Title       : lnnumb
+#: Version     : 1.0
+#: Description : prints given file with line numbers
+#: Options
+
+# Users can show help message with -h
+
+
+###########################################
+# Display help information about how to use the script
+# Arguments:
+#   None
+# Outputs:
+#   Help information printed to the console
+###########################################
+function show_help() {
+  	echo "Usage: $0 <file1> [<file2> ...]"
+  	echo "  -h  Show this help message"
+	exit 0
+}
+
+############################################
+# Print error message and exit with non-zero status
+# Arguments:
+#       $*: The error
+# Outputs:
+#       Error message printed to the standard error stream
+############################################
+err() {
+        echo "[$(date +'%Y-%m-%dT%H:%M:%S%z')]: $*" >&2
+	echo "try -h for help"
+        exit 1
+}
+# parse command line for options
+while getopts ":h" opt; do
+  	case $opt in
+    	h)
+      		show_help
+      		;;
+    	\?)
+      	
+		err "Invalid option: -$OPTARG" >&2
+      		;;
+  	esac
+done
+shift $((OPTIND-1))
+
+
+# if no options/file show help
+if [[ $# -eq 0 ]]; then
+	err "Requires at least one file"
+fi
+
+for file in "$@"; do # parse for each file
+	i=1 # line number set to 1 on new file
+	while read line; do  
+	if [[ $i == 1 ]]; then
+		echo "----------------------"
+		echo "File Name: $file"
+		echo "File Owner: $(stat -c '%U' $file)"
+		echo "----------------------"
+	fi
+		echo "$i : $line"  
+		i=$((i+1))  
+	done < $file
+done
