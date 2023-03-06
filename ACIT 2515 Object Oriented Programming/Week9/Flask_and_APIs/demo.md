@@ -1,0 +1,17 @@
+- create a new product with the JSON endpoint /api/product
+	- 
+- update an existing product with the JSON endpoint /api/product/<product_of_your_choice>
+- view the updated product with the JSON endpoint /api/product/
+- delete an existing product with the JSON endpoint /api/product/
+- view the deleted product with the JSON endpoint /api/product/
+- load the homepage of the app in your browser and confirm that the store inventory has been updated
+- create a new order with the JSON endpoint /api/order
+- view the created order with the JSON endpoint /api/order/<created_order_id>
+- create a new order with the JSON endpoint /api/order
+	- this order must contain at least one product that does not exist in the store inventory
+- create a new order with the JSON endpoint /api/order
+	- this order must contain products with an invalid quantity, such as: floating point numbers, strings, negative integers, etc.
+- create a new order with the JSON endpoint /api/order
+	- this order must contain at least one product in a quantity that exceeds the store inventory for instance, make an order with 1000 apple and 1000 cheese
+- process the first order created using the JSON endpoint
+- process the second order created using the JSON endpoint

@@ -11,9 +11,19 @@
             "id": "76e4c80d25403c52",
             "type": "leaf",
             "state": {
+              "type": "pdf",
+              "state": {
+                "file": "ACIT 2420 Linux System Administration/w23_notes/markus_afonso_midterm_2420.pdf"
+              }
+            }
+          },
+          {
+            "id": "59f80ebe9c99049b",
+            "type": "leaf",
+            "state": {
               "type": "markdown",
               "state": {
-                "file": "ACIT 2420 Linux System Administration/w23_notes/wk7/markus_afonso_as1.md",
+                "file": "ACIT 2515 Object Oriented Programming/Week9/Flask_and_APIs/demo.md",
                 "mode": "source",
                 "source": false
               }
@@ -82,7 +92,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "c3d27a1c3bfffaa7",
@@ -98,7 +109,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "ACIT 2420 Linux System Administration/w23_notes/wk7/Week7.md",
+                "file": "ACIT 2515 Object Oriented Programming/Week9/Flask_and_APIs/demo.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,7 +126,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "ACIT 2420 Linux System Administration/w23_notes/wk7/Week7.md",
+                "file": "ACIT 2515 Object Oriented Programming/Week9/Flask_and_APIs/demo.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -138,7 +149,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "ACIT 2420 Linux System Administration/w23_notes/wk7/Week7.md"
+                "file": "ACIT 2515 Object Oriented Programming/Week9/Flask_and_APIs/demo.md"
               }
             }
           }
@@ -159,25 +170,27 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "c38f134e97bbcce5",
+  "active": "59f80ebe9c99049b",
   "lastOpenFiles": [
+    "ACIT 2515 Object Oriented Programming/store.db-journal",
+    "ACIT 2515 Object Oriented Programming/store.db",
+    "ACIT 2420 Linux System Administration/w23_notes/markus_afonso_midterm_2420.pdf",
+    "ACIT 2515 Object Oriented Programming/Week9/Flask_and_APIs/demo.md",
+    "ACIT 2515 Object Oriented Programming/Week9/Flask_and_APIs/app.py.1961f8b2b01e9e197280a69c7eb7fa81.tmp",
+    "ACIT 2420 Linux System Administration/w23_notes/2420_Midterm_Exam.pdf",
     "ACIT 2420 Linux System Administration/w23_notes/wk7/markus_afonso_as1.md",
     "ACIT 2420 Linux System Administration/markus_afonso_as1.zip",
+    "ACIT 2420 Linux System Administration/markus_afonso_.zip",
     "ACIT 2420 Linux System Administration/as1.zip",
+    "ACIT 2420 Linux System Administration/w23_notes/wk7/Week7.md",
     "ACIT 2420 Linux System Administration/as1/markus_afonso_as1.pdf",
     "ACIT 2420 Linux System Administration/as1/writetask",
     "ACIT 2420 Linux System Administration/as1/readtask",
-    "ACIT 2420 Linux System Administration/as1/logrm",
-    "ACIT 2420 Linux System Administration/as1/lnnumb",
-    "ACIT 2420 Linux System Administration/as1",
-    "ACIT 2420 Linux System Administration/w23_notes/wk7/Week7.md",
     "ACIT 2420 Linux System Administration/w23_notes/wk5/lab.md",
     "ACIT 2620 Principles of Ent Networking/Notes/Notes.md",
     "ACIT 2420 Linux System Administration/w23_notes/wk3/lab 2.md",
     "ACIT 2420 Linux System Administration/w23_notes/wk3/lab.md",
     "ACIT 2420 Linux System Administration/w23_notes/wk4/lab.md",
-    "ACIT 2420 Linux System Administration/markus_afonso_as1.pdf",
-    "ACIT 2420 Linux System Administration/as1/script3",
     "ACIT 2831 Business Systems Analysis/Notes/Notes.md",
     "ACIT 2420 Linux System Administration/w23_notes/wk2/lab.md",
     "ACIT 2420 Linux System Administration/w23_notes/wk1/week1.md",
@@ -198,7 +211,6 @@
     "ACIT 2520 Developing Web Applications/Lesson/week8/Week8/node_modules/unzipper/README.md",
     "ACIT 2520 Developing Web Applications/Lesson/week8/Week8/node_modules/string_decoder/README.md",
     "ACIT 2520 Developing Web Applications/Lesson/week8/Week8/node_modules/safe-buffer/README.md",
-    "ACIT 2520 Developing Web Applications/Lesson/week8/Week8/node_modules/rimraf/README.md",
     "ACIT 2520 Developing Web Applications/Lesson/week8/Week8/grayscaled/in2.png",
     "ACIT 2520 Developing Web Applications/Lesson/week8/Week8/grayscaled/in1.png",
     "ACIT 2520 Developing Web Applications/Lesson/week8/Week8/grayscaled/in.png",

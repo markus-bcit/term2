@@ -1,3 +1,7 @@
+Each file must have the permissions in order to run properly, so for each file run
+```bash
+vagrant@ubuntu2210:~/data/as1$ sudo chmod 777 <filename>
+```
 ## Script one:
 #### Part 1 (writetask)
 If an option (date, tag, description) is not provided, the script will prompt the user
