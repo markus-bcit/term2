@@ -2,6 +2,18 @@ from database import db
 
 
 class Product(db.Model):
+    """
+    Represents a product with a name, price, and quantity.
+
+    Attributes:
+    - name (str): The name of the product (primary key).
+    - price (float): The price of the product (must be non-null).
+    - quantity (int): The quantity of the product (nullable).
+
+    Methods:
+    - to_dict(): Returns a dictionary representation of the object.
+    - remove(): Removes the object from the database. 
+    """
     name = db.Column(db.String, primary_key=True)
     price = db.Column(db.Float, nullable=False)
     quantity = db.Column(db.Integer, nullable=True)
@@ -13,15 +25,62 @@ class Product(db.Model):
         db.delete(self.name)
 
 class Order(db.Model):
+    """
+    Represents an order with an ID, customer name and address, and a list of ProductsOrder.
+
+    Attributes:
+    - id (int): The ID of the order (primary key).
+    - name (str): The name of the customer who placed the order.
+    - address (str): The address of the customer who placed the order.
+    - completed (bool): Whether the order has been completed.
+    - products (list of ProductsOrder): The list of products included in the order.
+
+    Methods:
+    - to_dict(): Returns a dictionary representation of the object, including the list of products and the total price of the order.
+    """
+
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String)
     address = db.Column(db.String)
     completed = db.Column(db.Boolean)
     products = db.relationship('ProductsOrder', back_populates='order')
+    
     def to_dict(self):
-        return {'name': self.name, 'address': self.address, 'completed': self.completed, 'products': self.products}
+        dic = {}
+        product_list = []
+        price = 0
+        for product in self.products:
+            product_list.append(product.to_dict())
+            
+        for item in product_list:
+            item.pop('order_id')
+
+        for item in product_list:
+            product = db.session.get(Product, item["product_name"])
+            price += product.to_dict()['price'] * item["quantity"]
+
+        dic["customer_name"] = self.name
+        dic["customer_address"] = self.address
+        dic["products"] = product_list
+        dic["price"] = round(price, 2)
+        return dic
     
 class ProductsOrder(db.Model):
+    """
+    Represents the relationship between a product and an order, with a quantity.
+
+    Attributes:
+    - product_name (str): The name of the product (foreign key to Product.name).
+    - order_id (int): The ID of the order (foreign key to Order.id).
+    - quantity (int): The quantity of the product in the order (must be non-null).
+
+    Relationships:
+    - product: The Product object associated with the order.
+    - order: The Order object associated with the product.
+
+    Methods:
+    - to_dict(): Returns a dictionary representation of the object.
+    """
     # Product foreign key is name
     product_name = db.Column(db.ForeignKey("product.name"), primary_key=True)
     # Order foreign key is ID
@@ -31,3 +90,5 @@ class ProductsOrder(db.Model):
     # Relationships and backreferences for SQL Alchemy
     product = db.relationship('Product')
     order = db.relationship('Order', back_populates='products')
+    def to_dict(self):
+        return {'product_name': self.product_name, 'order_id': self.order_id, 'quantity': self.quantity}
